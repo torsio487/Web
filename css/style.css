@@ -1,4 +1,4 @@
-/* 1. Element Selectors (Global Styles) */
+/* Element Selectors (Global Styles) */
 body {
     font-family: 'Comic Sans MS', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
@@ -17,7 +17,7 @@ p {
     margin-bottom: 15px;
 }
 
-/* 2. ID Selectors */
+/* ID Selectors */
 #main-header {
     background-color: #1a1a2e;
     padding: 20px;
@@ -38,7 +38,7 @@ p {
     max-width: 500px;
 }
 
-/* 3. Class Selectors */
+/* Class Selectors */
 .card {
     background-color: #1a1a2e;
     margin: 2rem auto;
@@ -69,7 +69,6 @@ p {
     border: 2px solid #69E799;
 }
 
-/* Требование: Круглое изображение (border-radius: 50%) */
 .profile-img {
     width: 200px;
     height: 200px;
@@ -101,7 +100,7 @@ p {
     background-color: #ff9f1c;
 }
 
-/* 4. Descendant Selectors & Pseudo-classes */
+/* Descendant Selectors & Pseudo-classes */
 .nav-menu a {
     color: #ffffff;
     text-decoration: none;
