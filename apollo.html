@@ -7,39 +7,67 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="main-header">
-        <h1>Deadlock Fan Wiki</h1>
-        <nav class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="characters.html">Characters</a>
-            <a href="paradox.html">The Greatest Hero #2</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="card profile-card">
-            <h2>Hero Focus: Apollo</h2>
-            
-            <img src="https://deadlock.wiki/images/0/0f/Apollo_card.png" alt="Apollo Character Portrait" class="profile-img">
+    <!-- Grid Container -->
+    <div class="site-container">
 
-            <h3>Biography & Lore</h3>
-            <p>As the prince of Ixia, Apollo comes from a land of beauty, tradition and conflict. Political violence was common in Ixia, but when Apollo was sent to New York for his own safety, he knew the situation was serious. Now a highly skilled fencer at Blackmore Academy, Apollo knows that in due time, he will be called back to Ixia... and when he returns, he will show why he's worthy to wield his family's ancestral blade.</p>
+        <!-- Flexbox Header -->
+        <header id="main-header">
+            <div class="header-logo">
+                <img src="https://deadlock.wiki/images/a/a5/Mina_card.png" alt="Deadlock Logo">
+                <span>Deadlock Wiki</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="characters.html">Characters</a>
+                <a href="apollo.html">Apollo</a>
+                <a href="paradox.html">Paradox</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+        </header>
 
-            <h3>Signature Abilities</h3>
+        <!-- Grid Sidebar -->
+        <aside class="sidebar">
+            <h3>Page Navigation</h3>
             <ul>
-                <li><strong>Disengaging Sigil:</strong> Apollo draws a sigil and does backflip with explosion.</li>
-                <li><strong>Riposte:</strong> A defensive parry skill designed for close-quarters dueling.</li>
-                <li><strong>Flawless Advance:</strong> A multi-directional lunge that delivers a sequence of piercing rapier thrusts.</li>
-                <li><strong>Itani Lo Sahn:</strong> Apollo does a AOE deadly dashstrike that deals extra damage to low hp foes.</li>
+                <li><a href="#bio">Biography & Lore</a></li>
+                <li><a href="#abilities">Signature Abilities</a></li>
+                <li><a href="paradox.html">Next Hero: Paradox</a></li>
             </ul>
+            <hr style="border-color: #0f3460; margin: 20px 0;">
+            <h3>Quick Stats</h3>
+            <p style="font-size: 0.85rem;"><strong>Role:</strong> Duelist / Mobile Melee</p>
+            <p style="font-size: 0.85rem;"><strong>Origin:</strong> Ixia</p>
+        </aside>
 
-            <img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Gameplay Screenshot" class="content-img">
-        </section>
-    </main>
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="card profile-card">
+                <h2>Hero Focus: Apollo</h2>
+                
+                <img src="https://deadlock.wiki/images/0/0f/Apollo_card.png" alt="Apollo Character Portrait" class="profile-img">
 
-    <footer>
-        <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
-    </footer>
+                <h3 id="bio">Biography & Lore</h3>
+                <p>As the prince of Ixia, Apollo comes from a land of beauty, tradition and conflict. Political violence was common in Ixia, but when Apollo was sent to New York for his own safety, he knew the situation was serious. Now a highly skilled fencer at Blackmore Academy, Apollo knows that in due time, he will be called back to Ixia... and when he returns, he will show why he's worthy to wield his family's ancestral blade.</p>
+
+                <h3 id="abilities">Signature Abilities</h3>
+                <ul>
+                    <li><strong>Disengaging Sigil:</strong> Apollo draws a sigil and does backflip with explosion.</li>
+                    <li><strong>Riposte:</strong> A defensive parry skill designed for close-quarters dueling.</li>
+                    <li><strong>Flawless Advance:</strong> A multi-directional lunge that delivers a sequence of piercing rapier thrusts.</li>
+                    <li><strong>Itani Lo Sahn:</strong> Apollo does a AOE deadly dashstrike that deals extra damage to low hp foes.</li>
+                </ul>
+
+                <img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Gameplay Screenshot" class="content-img">
+            </section>
+        </main>
+
+        <!-- Grid Footer -->
+        <footer>
+            <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>

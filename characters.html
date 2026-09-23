@@ -7,71 +7,95 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="main-header">
-        <h1>Deadlock Fan Wiki</h1>
-        <nav class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="apollo.html">The Greatest Hero #1</a>
-            <a href="paradox.html">The Greatest Hero #2</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="card">
-            <h2>The main misfits of Deadlock</h2>
-            <p>Check out the current misfits of heroes.</p>
-            
-            <h3>Top Hatred Heroes (in our proffessional opinion)</h3>
-            <!--OL list requirement-->
-            <ol>
-                <li><strong>Wraith</strong> - Degenerate Gambler with one button kill ultimate</li>
-                <li><strong>Celeste</strong> - Obnoxious unkillable unicorn</li>
-                <li><strong>Infernus</strong> - Ixier with no skill gameplay</li>
-                <li><strong>Mo & Krill</strong> - Pig and Monkey duo with one button full hp regeniration</li>
-            </ol>
+    <div class="site-container">
 
-            <!--Table requirement-->
-            <h3>Hero Attribute Matrix</h3>
-            <table id="hero-table">
-                <tr>
-                    <th>Hero Name</th>
-                    <th>Class Role</th>
-                    <th>Complexity</th>
-                    <th>Primary Engagement</th>
-                </tr>
-                <tr>
-                    <td>Wraith</td>
-                    <td>Duelist / Carry</td>
-                    <td>Easy af</td>
-                    <td>Mid Range</td>
-                </tr>
-                <tr>
-                    <td>Celeste</td>
-                    <td>Tank / Unicorn</td>
-                    <td>Easy af</td>
-                    <td>Close Range</td>
-                </tr>
-                <tr>
-                    <td>Infernus</td>
-                    <td>Damage / Bruiser</td>
-                    <td>Easy af</td>
-                    <td>Mid Range</td>
-                </tr>
-                <tr>
-                    <td>Mo & Krill</td>
-                    <td>Tank / Swine</td>
-                    <td>Easy af</td>
-                    <td>Close Range</td>
-                </tr>
-            </table>
+        <header id="main-header">
+            <div class="header-logo">
+                <img src="https://deadlock.wiki/images/a/a5/Mina_card.png" alt="Deadlock Logo">
+                <span>Deadlock Wiki</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="characters.html">Characters</a>
+                <a href="apollo.html">Apollo</a>
+                <a href="paradox.html">Paradox</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+        </header>
 
-            <img src="https://media.discordapp.net/attachments/1417059863200141333/1549864115239911434/image.png?ex=6aac3ef0&is=6aaaed70&hm=43a0ddddd14ae8cb593ebc78c031622388ab546e5eede9826b326c4391393b71&=&format=webp&quality=lossless" alt="Deadlock Current Meta" class="content-img">
-        </section>
-    </main>
+        <!-- Grid Sidebar -->
+        <aside class="sidebar">
+            <h3>Page Navigation</h3>
+            <ul>
+                <li><a href="#misfits">Main Misfits</a></li>
+                <li><a href="#hatred-list">Top Hatred Heroes</a></li>
+                <li><a href="#attribute-matrix">Attribute Matrix</a></li>
+            </ul>
+            <hr style="border-color: #0f3460; margin: 20px 0;">
+            <h3>Quick Stats</h3>
+            <p style="font-size: 0.85rem;">Total Tracked Heroes: 4</p>
+        </aside>
 
-    <footer>
-        <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
-    </footer>
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="card">
+                <h2 id="misfits">The main misfits of Deadlock</h2>
+                <p>Check out the current misfits of heroes.</p>
+                
+                <h3 id="hatred-list">Top Hatred Heroes (in our proffessional opinion)</h3>
+                <!-- OL list requirement -->
+                <ol>
+                    <li><strong>Wraith</strong> - Degenerate Gambler with one button kill ultimate</li>
+                    <li><strong>Celeste</strong> - Obnoxious unkillable unicorn</li>
+                    <li><strong>Infernus</strong> - Ixier with no skill gameplay</li>
+                    <li><strong>Mo & Krill</strong> - Pig and Monkey duo with one button full hp regeniration</li>
+                </ol>
+
+                <!--Table requirement -->
+                <h3 id="attribute-matrix">Hero Attribute Matrix</h3>
+                <table id="hero-table">
+                    <tr>
+                        <th>Hero Name</th>
+                        <th>Class Role</th>
+                        <th>Complexity</th>
+                        <th>Primary Engagement</th>
+                    </tr>
+                    <tr>
+                        <td>Wraith</td>
+                        <td>Duelist / Carry</td>
+                        <td>Easy af</td>
+                        <td>Mid Range</td>
+                    </tr>
+                    <tr>
+                        <td>Celeste</td>
+                        <td>Tank / Unicorn</td>
+                        <td>Easy af</td>
+                        <td>Close Range</td>
+                    </tr>
+                    <tr>
+                        <td>Infernus</td>
+                        <td>Damage / Bruiser</td>
+                        <td>Easy af</td>
+                        <td>Mid Range</td>
+                    </tr>
+                    <tr>
+                        <td>Mo & Krill</td>
+                        <td>Tank / Swine</td>
+                        <td>Easy af</td>
+                        <td>Close Range</td>
+                    </tr>
+                </table>
+
+                <img src="https://preview.redd.it/not-a-meme-competitive-deadlock-tier-list-oct-5-2025-patch-v0-36izmeij67wf1.png?auto=webp&s=3bbcdc965bdb52c9e2b742f7cb1c949a6f69a53e" alt="Deadlock Current Meta" class="content-img">
+            </section>
+        </main>
+
+        <footer>
+            <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>

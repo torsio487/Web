@@ -7,39 +7,64 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="main-header">
-        <h1>Deadlock Fan Wiki</h1>
-        <nav class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="characters.html">Characters</a>
-            <a href="apollo.html">The Greatest Hero #1</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="card profile-card">
-            <h2>Hero Focus: Paradox</h2>
-            
-            <img src="https://deadlock.wiki/images/0/08/Paradox_card.png" alt="Paradox Character Portrait" class="profile-img">
+    <div class="site-container">
 
-            <h3>Biography & Lore</h3>
-            <p>Paradox is both the name of this Hero and the name of their Thieves' Guild, specializing in stealing the untouchable and breaking into ultra-secure facilities. Their motives are unclear, except for a certain level of delight that its members seem to take in snubbing the world's biggest corporations and governments.</p>
+        <header id="main-header">
+            <div class="header-logo">
+                <img src="https://deadlock.wiki/images/a/a5/Mina_card.png" alt="Deadlock Logo">
+                <span>Deadlock Wiki</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="characters.html">Characters</a>
+                <a href="apollo.html">Apollo</a>
+                <a href="paradox.html">Paradox</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+        </header>
 
-            <h3>Signature Abilities</h3>
+        <!-- Grid Sidebar -->
+        <aside class="sidebar">
+            <h3>Page Navigation</h3>
             <ul>
-                <li><strong>Pulse Grenade:</strong> Throws time grenade that explodes several times and getting bigger.</li>
-                <li><strong>Time Wall:</strong> Places time wall that slows down enemies and projectiles.</li>
-                <li><strong>Kinetic Carbine:</strong> Fires empowered charged shot that freezes foes in time.</li>
-                <li><strong>Paradoxical Swap:</strong> Switches physical locations with a targeted enemy hero.</li>
+                <li><a href="#bio">Biography & Lore</a></li>
+                <li><a href="#abilities">Signature Abilities</a></li>
+                <li><a href="apollo.html">Previous Hero: Apollo</a></li>
             </ul>
+            <hr style="border-color: #0f3460; margin: 20px 0;">
+            <h3>Quick Stats</h3>
+            <p style="font-size: 0.85rem;"><strong>Role:</strong> Initiator / Time Manipulator</p>
+            <p style="font-size: 0.85rem;"><strong>Affiliation:</strong> Paradox    </p>
+        </aside>
 
-            <img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Gameplay Screenshot" class="content-img">
-        </section>
-    </main>
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="card profile-card">
+                <h2>Hero Focus: Paradox</h2>
+                
+                <img src="https://deadlock.wiki/images/0/08/Paradox_card.png" alt="Paradox Character Portrait" class="profile-img">
 
-    <footer>
-        <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
-    </footer>
+                <h3 id="bio">Biography & Lore</h3>
+                <p>Paradox is both the name of this Hero and the name of their Thieves' Guild, specializing in stealing the untouchable and breaking into ultra-secure facilities. Their motives are unclear, except for a certain level of delight that its members seem to take in snubbing the world's biggest corporations and governments.</p>
+
+                <h3 id="abilities">Signature Abilities</h3>
+                <ul>
+                    <li><strong>Pulse Grenade:</strong> Throws time grenade that explodes several times and getting bigger.</li>
+                    <li><strong>Time Wall:</strong> Places time wall that slows down enemies and projectiles.</li>
+                    <li><strong>Kinetic Carbine:</strong> Fires empowered charged shot that freezes foes in time.</li>
+                    <li><strong>Paradoxical Swap:</strong> Switches physical locations with a targeted enemy hero.</li>
+                </ul>
+
+                <img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Gameplay Screenshot" class="content-img">
+            </section>
+        </main>
+
+        <footer>
+            <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>

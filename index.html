@@ -1,63 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--boilerplate-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deadlock Wiki - Home</title>
-    <!--CSS link-->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header id="main-header">
-        <h1>Deadlock Fan Wiki</h1>
-        <nav class="nav-menu">
-            <a href="characters.html">Characters</a>
-            <a href="apollo.html">The Greatest Hero #1</a>
-            <a href="paradox.html">The Greatest Hero #2</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="card">
-            <h2>Welcome to the Deadlock Wiki</h2>
-            <p>Deadlock is an upcoming 6v6 hero shooter game developed by Valve. It combines fast-paced shooter mechanics with deep strategic MOBA elements, featuring dynamic heroes and lane-based combat.</p>
-            
-            <h3>Core Game Features</h3>
-            <!--UL list requirement-->
+    <!-- Grid Container wrapping the site structure -->
+    <div class="site-container">
+
+        <!-- Flexbox Header (Logo Left + Links Right) -->
+        <header id="main-header">
+            <div class="header-logo">
+                <img src="https://deadlock.wiki/images/a/a5/Mina_card.png" alt="Deadlock Logo">
+                <span>Deadlock Wiki</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="characters.html">Characters</a>
+                <a href="apollo.html">Apollo</a>
+                <a href="paradox.html">Paradox</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+        </header>
+
+        <!-- Grid Area Sidebar -->
+        <aside class="sidebar">
+            <h3>Page Navigation</h3>
             <ul>
-                <li>Strategic 6v6 tactical team engagements</li>
-                <li>Skyrail network for quick map traversal</li>
-                <li>In-match item economy and ability upgrades</li>
-                <li>Diverse hero roster with distinct playstyles</li>
+                <li><a href="#welcome">Welcome</a></li>
+                <li><a href="#featured-heroes">Featured Heroes</a></li>
+                <li><a href="#hero-gallery">Hero Gallery</a></li>
+                <li><a href="#about-us">About Team</a></li>
             </ul>
+            <hr style="border-color: #0f3460; margin: 20px 0;">
+            <h3>Latest Updates</h3>
+            <p style="font-size: 0.85rem;">New hero guides added for Apollo and Paradox! Check feedback section to contribute.</p>
+        </aside>
 
-            <!--Img requirement-->
-            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcno2NTN6ZTB4M2s2aHcwcmx2b3I0MThpc3oyb3dscnY0bTNoazNhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zudVphGuW4loBNWbG4/giphy.gif" alt="Deadlock Gameplay Overview" class="content-img">
-        </section>
+        <!-- Grid Area Main Content -->
+        <main class="main-content">
+            
+            <section id="welcome" class="card">
+                <h2>Welcome to the Deadlock Wiki</h2>
+                <p>Deadlock is an upcoming 6v6 hero shooter game developed by Valve. It combines fast-paced shooter mechanics with deep strategic MOBA elements, featuring dynamic heroes and lane-based combat.</p>
+                
+                <h3>Core Game Features</h3>
+                <ul>
+                    <li>Strategic 6v6 tactical team engagements</li>
+                    <li>Skyrail network for quick map traversal</li>
+                    <li>In-match item economy and ability upgrades</li>
+                    <li>Diverse hero roster with distinct playstyles</li>
+                </ul>
 
-        <section class="card">
-            <h2>About Us</h2>
-            <p>Welcome to our Deadlock Wiki project</p>
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcno2NTN6ZTB4M2s2aHcwcmx2b3I0MThpc3oyb3dscnY0bTNoazNhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zudVphGuW4loBNWbG4/giphy.gif" alt="Deadlock Gameplay Overview" class="content-img">
+            </section>
 
-            <div class="bio-block">
-                <h3>Alizan Talov</h3>
-                <p><strong>Role:</strong> Developer #1</p>
-                <p>Created characters and Paradox pages</p>
-            </div>
+            <!-- Flexbox Cards Section -->
+            <section id="featured-heroes" class="card">
+                <h2>Featured Roster</h2>
+                <p>Explore some of the prominent heroes in Deadlock:</p>
+                
+                <div class="card-row-container">
+                    <div class="flex-card">
+                        <img src="https://deadlock.wiki/images/0/0f/Apollo_card.png" alt="Apollo">
+                        <h4>Apollo</h4>
+                        <p>Prince of Ixia and highly skilled fencer with high mobility and rapier strikes.</p>
+                        <a href="apollo.html" class="card-btn">Read Lore</a>
+                    </div>
 
-            <div class="bio-block">
-                <h3>Ruslan Suleimen</h3>
-                <p><strong>Role:</strong> Developer #2</p>
-                <p>Created home and Apollo pages</p>
-            </div>
-        </section>
-    </main>
+                    <div class="flex-card">
+                        <img src="https://deadlock.wiki/images/0/08/Paradox_card.png" alt="Paradox">
+                        <h4>Paradox</h4>
+                        <p>Master thief capable of manipulating time, freezing foes, and swapping positions.</p>
+                        <a href="paradox.html" class="card-btn">Read Lore</a>
+                    </div>
 
-    <!--Footer requirement-->
-    <footer>
-        <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
-    </footer>
+                    <div class="flex-card">
+                        <img src="https://deadlock.wiki/images/8/85/Wraith_card.png" alt="Wraith">
+                        <h4>Wraith</h4>
+                        <p>High-damage duelist specializing in single-target burst and rapid gunplay.</p>
+                        <a href="characters.html" class="card-btn">View Stats</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Image Gallery -->
+            <section id="hero-gallery" class="card">
+                <h2>Hero Snapshots Gallery</h2>
+                <p>Hover over any image to view details:</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://deadlock.wiki/images/0/0f/Apollo_card.png" alt="Apollo">
+                        <div class="gallery-caption">Apollo - Duelist</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://deadlock.wiki/images/0/08/Paradox_card.png" alt="Paradox">
+                        <div class="gallery-caption">Paradox - Initiator</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://deadlock.wiki/images/8/85/Wraith_card.png" alt="Wraith">
+                        <div class="gallery-caption">Wraith - Carry</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Action">
+                        <div class="gallery-caption">Apollo Combat</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Action">
+                        <div class="gallery-caption">Paradox Swap</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://preview.redd.it/bioshock-style-sky-rail-guards-have-been-removed-opting-for-v0-tcio14kiq2fg1.jpg?width=1080&crop=smart&auto=webp&s=3dd9c41374547551bb95cba4e919bf19cb7da959" alt="Skyrails">
+                        <div class="gallery-caption">Skyrail Transit</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://deadlock.wiki/images/6/6b/Infernus_card.png" alt="Infernus">
+                        <div class="gallery-caption">Infernus - Bruiser</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://deadlock.wiki/images/9/90/Celeste_card.png" alt="Celeste">
+                        <div class="gallery-caption">Celeste - Tank</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://deadlock.wiki/images/a/a1/Mo_%26_Krill_card.png" alt="Mo & Krill">
+                        <div class="gallery-caption">Mo & Krill - Tank</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about-us" class="card">
+                <h2>About Us</h2>
+                <p>Welcome to our Deadlock Wiki project</p>
+
+                <div class="bio-block">
+                    <h3>Alizan Talov</h3>
+                    <p><strong>Role:</strong> Developer #1</p>
+                    <p>Created characters and Paradox pages</p>
+                </div>
+
+                <div class="bio-block">
+                    <h3>Ruslan Suleimen</h3>
+                    <p><strong>Role:</strong> Developer #2</p>
+                    <p>Created home and Apollo pages</p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Task 3: Grid Area - Footer -->
+        <footer>
+            <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
