@@ -17,59 +17,30 @@ p {
     margin-bottom: 15px;
 }
 
-/* Task 1: Responsive Typography */
-html { font-size: 14px; }
-@media (min-width: 768px) { html { font-size: 15px; } }
-@media (min-width: 992px) { html { font-size: 16px; } }
-
-/* Override Bootstrap Container to match original width */
+/* grid layout */
 .site-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
     max-width: 1300px;
     margin: 0 auto;
+    padding: 10px;
 }
 
-/* flexbox navigation (Bootstrap Navbar Override) */
-#main-header {
-    background-color: #1a1a2e;
-    border-bottom: 4px solid #69E799;
-    border-radius: 8px;
-}
-
-.header-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.header-logo img {
-    height: 40px;
-    width: auto;
-}
-
-.header-logo span {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #69E799;
-}
-
-.nav-menu a {
-    color: #ffffff !important;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 6px 12px;
-    transition: color 0.3s, border-bottom 0.3s;
-    text-decoration: none;
-}
-
-.nav-menu a:hover {
-    color: #e94560 !important;
-    border-bottom: 2px solid #e94560;
-}
+/* grid areas */
+#main-header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main-content { grid-area: main; }
+footer { grid-area: footer; }
 
 /* sidebar styling */
 .sidebar {
     background-color: #1a1a2e;
+    padding: 20px;
     border-radius: 8px;
     border: 1px solid #0f3460;
     height: fit-content;
@@ -93,42 +64,85 @@ html { font-size: 14px; }
     text-decoration: underline;
 }
 
-/* cards (Override Bootstrap .card to match your original design) */
-.custom-panel {
+/* flexbox navigation */
+#main-header {
     background-color: #1a1a2e;
+    padding: 15px 30px;
+    border-bottom: 4px solid #69E799;
+    display: flex; 
+    justify-content: space-between; /* logo left, links right */
+    align-items: center; /* vertically centered */
+    border-radius: 8px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header-logo span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #69E799;
+}
+
+.nav-menu {
+    display: flex; 
+    gap: 15px; 
+    align-items: center;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #e94560;
+    border-bottom: 2px solid #e94560;
+}
+
+/* cards */
+.card {
+    background-color: #1a1a2e;
+    margin-bottom: 2rem;
+    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-/* Task 2: Custom Card Group (Only Media Queries, NO Bootstrap Grid here) */
+/* flexbox card flow */
 .card-row-container {
     display: flex; 
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: row;
+    gap: 20px; /* consistent gaps */
+    justify-content: space-between;
+    align-items: stretch; /* ensures all cards have equal height */
+    margin-top: 15px;
 }
 
 .flex-card {
+    flex: 1; /* equal width distribution */
+    display: flex;
+    flex-direction: column;
     background-color: #16213e;
     border-radius: 8px;
     padding: 15px;
     border: 1px solid #0f3460;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Mobile: 1 col */
-    flex: 1 1 100%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* hover transition */
 }
 
-@media (min-width: 768px) {
-    /* Tablet: 2 cols */
-    .flex-card { flex: 1 1 calc(50% - 20px); }
-}
-
-@media (min-width: 992px) {
-    /* Desktop: 3 cols */
-    .flex-card { flex: 1 1 calc(33.333% - 20px); }
-}
-
+/* lift and shadow hover effect */
 .flex-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(105, 231, 153, 0.3);
@@ -149,31 +163,82 @@ html { font-size: 14px; }
 
 .flex-card p {
     font-size: 0.9rem;
-    flex-grow: 1;
+    flex-grow: 1; /* pushes button to bottom for neat alignment */
 }
 
-/* Buttons */
-.custom-btn {
-    background-color: #69E799 !important;
-    color: #121212 !important;
+.card-btn {
+    align-self: flex-start;
+    background-color: #69E799;
+    color: #121212;
+    padding: 8px 14px;
+    text-decoration: none;
     font-weight: bold;
-    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
     transition: background-color 0.3s;
 }
 
-.custom-btn:hover {
-    background-color: #ff9f1c !important;
+.card-btn:hover {
+    background-color: #ff9f1c;
+}
+
+/* img gallery (grid) */
+.gallery-grid {
+    display: grid; /* grid container */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+    gap: 15px; /* consistent spacing */
+    margin-top: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid #69E799;
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* zoom effect on hover */
+}
+
+/* caption overlay */
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 46, 0.9);
+    color: #69E799;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    transform: translateY(100%); /* hidden initially */
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0); /* slide up on hover */
 }
 
 /* existing styles */
 #hero-table {
     width: 100%;
     border-collapse: collapse;
+    margin: 15px 0;
     background-color: #16213e;
 }
 
 #hero-table th, #hero-table td {
     border: 1px solid #0f3460;
+    padding: 12px;
     text-align: left;
 }
 
@@ -187,6 +252,7 @@ html { font-size: 14px; }
     max-width: 600px;
     height: auto;
     border-radius: 6px;
+    margin-top: 15px;
     border: 2px solid #69E799;
 }
 
@@ -196,11 +262,231 @@ html { font-size: 14px; }
     border-radius: 50%;
     border: 4px solid #69E799;
     object-fit: cover;
+    margin: 15px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2e4d1c;
+    color: #fff;
+}
+
+.submit-btn {
+    background-color: #2E4D1C;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 footer {
     text-align: center;
+    padding: 20px;
     background-color: #1a1a2e;
     color: #888;
     border-radius: 8px;
+}
+
+/* responsive breakpoint */
+@media (max-width: 850px) {
+    .site-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+    .card-row-container {
+        flex-direction: column;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 850px) {
+    .site-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+    .card-row-container {
+        flex-direction: column;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/*mobile responsiveness (screens <= 576px) */
+@media (max-width: 576px) {
+    .site-container {
+        padding: 5px;
+        gap: 10px;
+    }
+
+    #main-header {
+        padding: 15px 10px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .nav-menu a {
+        display: block;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    #hero-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .content-img {
+        max-width: 100%;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Laptops / Small Desktops (993px to 1200px) */
+@media (max-width: 1200px) {
+    .site-container {
+        max-width: 100%;
+        padding: 15px;
+        grid-template-columns: 220px 1fr;
+        gap: 15px;
+    }
+    
+    #main-header {
+        padding: 15px 20px;
+    }
+
+    .nav-menu {
+        gap: 10px;
+    }
+
+    .nav-menu a {
+        padding: 5px 8px;
+        font-size: 0.95rem;
+    }
+
+    .card-row-container {
+        gap: 15px;
+    }
+}
+
+/* Tablets in Landscape & Medium Devices (769px to 992px) */
+@media (max-width: 992px) {
+    .site-container {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .card-row-container {
+        flex-wrap: wrap;
+    }
+
+    .flex-card {
+        min-width: 45%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets in Portrait & Large Mobile (577px to 768px) */
+@media (max-width: 768px) {
+    .site-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    #main-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .card-row-container {
+        flex-direction: column;
+    }
+
+    .flex-card {
+        width: 100%;
+    }
+
+    #hero-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* 4. Extra Small Mobile Devices (<= 400px) */
+@media (max-width: 400px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .header-logo span {
+        font-size: 1.1rem;
+    }
+
+    .card {
+        padding: 0.8rem;
+    }
+
+    .card-btn, .submit-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .profile-img {
+        width: 110px;
+        height: 110px;
+    }
 }
