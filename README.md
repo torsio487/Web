@@ -1,4 +1,3 @@
-[deadlock_wiki_readme.md](https://github.com/user-attachments/files/33164943/deadlock_wiki_readme.md)
 # Deadlock Wiki Website
 
 Welcome to the **Deadlock Wiki** project—a responsive, multi-page web application dedicated to Valve's hero-shooter, *Deadlock*. This wiki provides comprehensive information regarding gameplay mechanics, hero lore, tier lists, and feature galleries.
