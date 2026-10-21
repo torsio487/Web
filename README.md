@@ -75,4 +75,4 @@ In this fourth assignment, dynamic client-side interactivity was implemented usi
 
 ## Live Demo & Deployment
 
-* **Deployed Website URL:** [https://github.com/torsio487/Web]
+* **Deployed Website URL:** [[https://github.com/torsio487/Web]](https://torsio487.github.io/Web/)
