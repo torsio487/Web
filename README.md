@@ -1,65 +1,78 @@
-# Deadlock Wiki Website
+# Deadlock Fan Wiki
 
-Welcome to the **Deadlock Wiki** project—a responsive, multi-page web application dedicated to Valve's hero-shooter, *Deadlock*. This wiki provides comprehensive information regarding gameplay mechanics, hero lore, tier lists, and feature galleries.
-
----
-
-##  Authors & Team
-Created by the **Golden Goose Egg Team**:
-* **Alizan Talov** – Developer #1 (Characters & Paradox Pages)
-* **Ruslan Suleimen** – Developer #2 (Home & Apollo Pages)
+A community-driven wiki website for Valve's hero shooter game Deadlock, developed as part of Assignment #4: Introduction to JavaScript.
 
 ---
 
-##  Key Features
+## Team Information
 
-* **Complete Multi-Page Structure:**
-  * `index.html`: Main landing page featuring core game mechanics, featured hero overview, hover-activated snapshot gallery, and team details.
-  * `characters.html`: Hero meta analysis, subjective tier list, and detailed attribute matrix table.
-  * `apollo.html`: Hero focus spotlight on **Apollo**, including backstory, signature abilities, and gameplay previews.
-  * `paradox.html`: Hero focus spotlight on **Paradox**, detailing time-manipulation lore, skill sets, and media.
-  * `feedback.html`: Community engagement form allowing users to submit lore suggestions, bug reports, and hero guides.
-* **Modern CSS Layouts:**
-  * **CSS Grid:** Powers the overarching page layout (`.site-container` with header, sidebar, main content, footer) and the image gallery (`.gallery-grid`).
-  * **Flexbox:** Drives the navigation menu, logo alignment, hero card rows, and form input stacks.
-* **Fully Responsive Design:** Seamlessly adapts across Desktop, Laptop, Tablet, and Mobile viewport sizes.
+* **Team Name:** Golden Goose Egg Team
+* **Group:** [Your Group Name / Code]
+* **Team Members:**
+  * Alizan Talov (Developer #1)
+  * Ruslan Suleimen (Developer #2)
 
 ---
 
-##  Responsiveness & Breakpoints
+## Project Overview
 
-The project includes multi-tiered CSS `@media` queries in `css/style.css` to guarantee a fluid user experience on any device:
+The Deadlock Fan Wiki is a multi-page web application providing detailed lore, hero statistics, and interactive media galleries for heroes like *Apollo*, *Paradox*, *Wraith*, and others. 
 
-1. **Desktops (> 1200px):** Two-column grid with fixed 260px sidebar and spacious card layouts.
-2. **Laptops (993px – 1200px):** Optimized sidebar width (220px) and tighter flex gap adjustments.
-3. **Tablets (577px – 992px):** Card items flex into a 2x2 grid structure; layouts shift smoothly on narrow tablet screens.
-4. **Mobile Devices (<= 576px):**
-   * Single-column vertical layout (`sidebar` shifts under `main`).
-   * Gallery collapses to 1 column.
-   * Navigation menu switches to full-width stacked touch buttons.
-   * Tables enable horizontal scrolling (`overflow-x: auto`) to prevent UI breaking.
-5. **Extra Small Screens (<= 400px):** Typography and buttons scaled down for compact mobile screens.
+In this fourth assignment, dynamic client-side interactivity was implemented using vanilla JavaScript to enhance user experience and satisfy assignment guidelines.
 
 ---
 
-##  Project Structure
+## Features Implemented (Assignment #4)
+
+1. **Form Validation (Task 1):**
+   * Real-time and submit-time JavaScript validation for user input on `feedback.html`.
+   * Checks for valid email address syntax.
+   * Enforces minimum password length (6 characters) and verifies password confirmation matching.
+   * Displays clear inline error messages.
+
+2. **FAQ Accordion (Task 2):**
+   * Interactive Q&A accordion section on the home page (`index.html`).
+   * Smoothly toggles visibility of answers when clicking question headers.
+
+3. **Popup Subscription Modal (Task 3):**
+   * Dynamic modal dialog triggered by clicking the "Subscribe to Wiki" button in the sidebar.
+   * Can be dismissed via a close button or by clicking anywhere outside the modal overlay.
+
+4. **Dynamic Background Color Switcher (Task 4):**
+   * Sidebar button that dynamically cycles the website's background color through a predefined dark theme palette using JavaScript DOM manipulation.
+
+5. **Live Clock & Date Display (Task 5):**
+   * A real-time widget embedded in the sidebar that displays the current formatted date and time (e.g., *"October 21, 2026, 07:49 PM"*) updated every second.
+
+---
+
+## Tech Stack
+
+* **HTML5:** Semantic site structure and accessibility.
+* **CSS3 & Bootstrap 5:** Custom styling, dark mode theme, Flexbox/Grid layouts, and responsive components.
+* **JavaScript (ES6+):** DOM manipulation, event listeners, interval timers, and form validation.
+
+---
+
+## Project Structure
 
 ```text
 .
-├── index.html          # Main landing page
-├── characters.html     # Hero list, meta table & tier list
-├── apollo.html         # Apollo hero spotlight
-├── paradox.html        # Paradox hero spotlight
-├── feedback.html       # User feedback form
-└── css/
-    └── style.css       # Unified stylesheet with grid, flexbox & media queries
+├── css/
+│   └── style.css            # Custom CSS styles (Grid, Flexbox, Modal, Accordion)
+├── js/
+│   └── script.js            # JavaScript file (Validation, Clock, Accordion, Modal, Bg Switcher)
+├── images/                  # Local image assets
+├── index.html               # Home Page (FAQ Accordion, Hero Gallery, Modal Structure)
+├── characters.html          # Character Roster & Attribute Matrix
+├── apollo.html              # Hero Spotlight: Apollo
+├── paradox.html             # Hero Spotlight: Paradox
+├── feedback.html            # User Feedback & Form Validation
+└── README.md                # Project documentation
 ```
 
 ---
 
-##  Built With
+## Live Demo & Deployment
 
-* **HTML5** – Semantic structure (`<header>`, `<aside>`, `<main>`, `<section>`, `<footer>`, `<nav>`, `<form>`)
-* **CSS3** – CSS Grid, Flexbox, custom variables/styles, and CSS Transitions/Transform hover effects.
-
----
+* **Deployed Website URL:** [https://github.com/torsio487/Web]
