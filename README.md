@@ -7,7 +7,7 @@ A community-driven wiki website for Valve's hero shooter game Deadlock, develope
 ## Team Information
 
 * **Team Name:** Golden Goose Egg Team
-* **Group:** [Your Group Name / Code]
+* **Group:** SE-2508
 * **Team Members:**
   * Alizan Talov (Developer #1)
   * Ruslan Suleimen (Developer #2)
