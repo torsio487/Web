@@ -12,7 +12,7 @@
 
         <header id="main-header">
             <div class="header-logo">
-                <img src="https://deadlock.wiki/images/a/a5/Mina_card.png" alt="Deadlock Logo">
+                <img src="https://cdn.deadlock.wiki/Mina_card.png" alt="Deadlock Logo">
                 <span>Deadlock Wiki</span>
             </div>
             <nav class="nav-menu">
@@ -24,26 +24,30 @@
             </nav>
         </header>
 
-        <!-- Grid Sidebar -->
         <aside class="sidebar">
+            <div class="clock-widget">
+                <small style="color: #888;">Current Time:</small>
+                <div id="live-clock">Loading time...</div>
+            </div>
+
             <h3>Page Navigation</h3>
             <ul>
                 <li><a href="#feedback-section">Feedback Form</a></li>
                 <li><a href="#about-us-section">About Developers</a></li>
             </ul>
+            <button id="change-bg-btn" class="btn-theme">Change Theme Color</button>
             <hr style="border-color: #0f3460; margin: 20px 0;">
             <h3>Contact Info</h3>
             <p style="font-size: 0.85rem;">Golden Goose Egg Team</p>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
-            <!-- Form Section requirement -->
             <section id="feedback-section" class="card">
                 <h2>Deadlock Wiki Feedback</h2>
                 <p>Help us improve our community wiki! Send us your thoughts, corrections, or feature suggestions.</p>
                 
-                <form id="feedback-form" action="#" method="POST">
+                <!-- Task 1: Form Validation -->
+                <form id="feedback-form" action="#" method="POST" novalidate>
                     <div class="form-group">
                         <label for="nickname">Your Nickname:</label>
                         <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
@@ -52,6 +56,19 @@
                     <div class="form-group">
                         <label for="email">Email Address:</label>
                         <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        <span id="email-error" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Account Password (min 6 chars):</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required>
+                        <span id="pass-error" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" required>
+                        <span id="confirm-pass-error" class="error-msg"></span>
                     </div>
 
                     <div class="form-group">
@@ -80,13 +97,11 @@
                 <div class="bio-block">
                     <h3>Alizan Talov</h3>
                     <p><strong>Role:</strong> Developer #1</p>
-                    <p>Created characters and Paradox pages</p>
                 </div>
 
                 <div class="bio-block">
                     <h3>Ruslan Suleimen</h3>
                     <p><strong>Role:</strong> Developer #2</p>
-                    <p>Created home and Apollo pages</p>
                 </div>
             </section>
         </main>
@@ -97,5 +112,6 @@
 
     </div>
 
+    <script src="js/script.js"></script>
 </body>
 </html>

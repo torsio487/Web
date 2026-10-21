@@ -8,13 +8,11 @@
 </head>
 <body>
 
-    <!-- Grid Container wrapping the site structure -->
     <div class="site-container">
 
-        <!-- Flexbox Header (Logo Left + Links Right) -->
         <header id="main-header">
             <div class="header-logo">
-                <img src="https://deadlock.wiki/images/a/a5/Mina_card.png" alt="Deadlock Logo">
+                <img src="https://cdn.deadlock.wiki/Mina_card.png" alt="Deadlock Logo">
                 <span>Deadlock Wiki</span>
             </div>
             <nav class="nav-menu">
@@ -26,21 +24,31 @@
             </nav>
         </header>
 
-        <!-- Grid Area Sidebar -->
         <aside class="sidebar">
+            <!-- Task 5: Live Clock -->
+            <div class="clock-widget">
+                <small style="color: #888;">Current Time:</small>
+                <div id="live-clock">Loading time...</div>
+            </div>
+
             <h3>Page Navigation</h3>
             <ul>
                 <li><a href="#welcome">Welcome</a></li>
                 <li><a href="#featured-heroes">Featured Heroes</a></li>
+                <li><a href="#faq-section">FAQ Accordion</a></li>
                 <li><a href="#hero-gallery">Hero Gallery</a></li>
                 <li><a href="#about-us">About Team</a></li>
             </ul>
+
+            <!-- Task 3 & 4: Modal & Theme Buttons -->
+            <button id="open-modal-btn" class="btn-theme" style="margin-top: 15px;">Subscribe to Wiki</button>
+            <button id="change-bg-btn" class="btn-theme">Change Theme Color</button>
+
             <hr style="border-color: #0f3460; margin: 20px 0;">
             <h3>Latest Updates</h3>
-            <p style="font-size: 0.85rem;">New hero guides added for Apollo and Paradox! Check feedback section to contribute.</p>
+            <p style="font-size: 0.85rem;">New hero guides added for Apollo and Paradox!</p>
         </aside>
 
-        <!-- Grid Area Main Content -->
         <main class="main-content">
             
             <section id="welcome" class="card">
@@ -58,28 +66,27 @@
                 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcno2NTN6ZTB4M2s2aHcwcmx2b3I0MThpc3oyb3dscnY0bTNoazNhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zudVphGuW4loBNWbG4/giphy.gif" alt="Deadlock Gameplay Overview" class="content-img">
             </section>
 
-            <!-- Flexbox Cards Section -->
             <section id="featured-heroes" class="card">
                 <h2>Featured Roster</h2>
                 <p>Explore some of the prominent heroes in Deadlock:</p>
                 
                 <div class="card-row-container">
                     <div class="flex-card">
-                        <img src="https://deadlock.wiki/images/0/0f/Apollo_card.png" alt="Apollo">
+                        <img src="https://images-ext-1.discordapp.net/external/aKBFCqkb3YOMna6OJmXke_SZYba1k_sNJaNvfvV9HQ8/https/cdn.deadlock.wiki/Apollo_card.png?format=webp&quality=lossless" alt="Apollo">
                         <h4>Apollo</h4>
                         <p>Prince of Ixia and highly skilled fencer with high mobility and rapier strikes.</p>
                         <a href="apollo.html" class="card-btn">Read Lore</a>
                     </div>
 
                     <div class="flex-card">
-                        <img src="https://deadlock.wiki/images/0/08/Paradox_card.png" alt="Paradox">
+                        <img src="https://cdn.deadlock.wiki/Paradox_card.png" alt="Paradox">
                         <h4>Paradox</h4>
                         <p>Master thief capable of manipulating time, freezing foes, and swapping positions.</p>
                         <a href="paradox.html" class="card-btn">Read Lore</a>
                     </div>
 
                     <div class="flex-card">
-                        <img src="https://deadlock.wiki/images/8/85/Wraith_card.png" alt="Wraith">
+                        <img src="https://cdn.deadlock.wiki/Wraith_card.png" alt="Wraith">
                         <h4>Wraith</h4>
                         <p>High-damage duelist specializing in single-target burst and rapid gunplay.</p>
                         <a href="characters.html" class="card-btn">View Stats</a>
@@ -87,76 +94,87 @@
                 </div>
             </section>
 
-            <!-- Image Gallery -->
+            <!-- Task 2: FAQ Accordion -->
+            <section id="faq-section" class="card">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">What is Deadlock?</div>
+                    <div class="accordion-body">
+                        <p>Deadlock is Valve's new 6v6 hero-based shooter combining third-person gunplay with MOBA mechanics.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">How do I access the playtest?</div>
+                    <div class="accordion-body">
+                        <p>Currently, access is invite-only through friends who already own the playtest on Steam.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">Who developed this Wiki?</div>
+                    <div class="accordion-body">
+                        <p>This community wiki was created by Golden Goose Egg Team (Alizan Talov & Ruslan Suleimen).</p>
+                    </div>
+                </div>
+            </section>
+
             <section id="hero-gallery" class="card">
                 <h2>Hero Snapshots Gallery</h2>
                 <p>Hover over any image to view details:</p>
                 
                 <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://deadlock.wiki/images/0/0f/Apollo_card.png" alt="Apollo">
-                        <div class="gallery-caption">Apollo - Duelist</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://deadlock.wiki/images/0/08/Paradox_card.png" alt="Paradox">
-                        <div class="gallery-caption">Paradox - Initiator</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://deadlock.wiki/images/8/85/Wraith_card.png" alt="Wraith">
-                        <div class="gallery-caption">Wraith - Carry</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Action">
-                        <div class="gallery-caption">Apollo Combat</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Action">
-                        <div class="gallery-caption">Paradox Swap</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://preview.redd.it/bioshock-style-sky-rail-guards-have-been-removed-opting-for-v0-tcio14kiq2fg1.jpg?width=1080&crop=smart&auto=webp&s=3dd9c41374547551bb95cba4e919bf19cb7da959" alt="Skyrails">
-                        <div class="gallery-caption">Skyrail Transit</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://deadlock.wiki/images/6/6b/Infernus_card.png" alt="Infernus">
-                        <div class="gallery-caption">Infernus - Bruiser</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://deadlock.wiki/images/9/90/Celeste_card.png" alt="Celeste">
-                        <div class="gallery-caption">Celeste - Tank</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://deadlock.wiki/images/a/a1/Mo_%26_Krill_card.png" alt="Mo & Krill">
-                        <div class="gallery-caption">Mo & Krill - Tank</div>
-                    </div>
+                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/aKBFCqkb3YOMna6OJmXke_SZYba1k_sNJaNvfvV9HQ8/https/cdn.deadlock.wiki/Apollo_card.png?format=webp&quality=lossless" alt="Apollo"><div class="gallery-caption">Apollo - Duelist</div></div>
+                    <div class="gallery-item"><img src="https://cdn.deadlock.wiki/Paradox_card.png" alt="Paradox"><div class="gallery-caption">Paradox - Initiator</div></div>
+                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/ZU2_0tZ3RMvvqWl2Autc_b786JKcxYyrGLV6vc9bAGY/https/cdn.deadlock.wiki/Wraith_card.png?format=webp&quality=lossless" alt="Wraith"><div class="gallery-caption">Wraith - Carry</div></div>
+                    <div class="gallery-item"><img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Action"><div class="gallery-caption">Apollo Combat</div></div>
+                    <div class="gallery-item"><img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Action"><div class="gallery-caption">Paradox Swap</div></div>
+                    <div class="gallery-item"><img src="https://preview.redd.it/bioshock-style-sky-rail-guards-have-been-removed-opting-for-v0-tcio14kiq2fg1.jpg?width=1080&crop=smart&auto=webp&s=3dd9c41374547551bb95cba4e919bf19cb7da959" alt="Skyrails"><div class="gallery-caption">Skyrail Transit</div></div>
+                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/LuzNGZ-BJxvdfSuJwGJNPgzvEVYAmXazK2oNWAsGeJo/https/cdn.deadlock.wiki/Infernus_card.png?format=webp&quality=lossless" alt="Infernus"><div class="gallery-caption">Infernus - Bruiser</div></div>
+                    <div class="gallery-item"><img src="https://cdn.deadlock.wiki/Celeste_card.png" alt="Celeste"><div class="gallery-caption">Celeste - Tank</div></div>
+                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/fDZDuxjYFgVBbr5dG3PHy1Ywgoym65ppiHBRQmenenc/https/cdn.deadlock.wiki/Mo_%2526_Krill_card.png?format=webp&quality=lossless" alt="Mo & Krill"><div class="gallery-caption">Mo & Krill - Tank</div></div>
                 </div>
             </section>
 
             <section id="about-us" class="card">
                 <h2>About Us</h2>
                 <p>Welcome to our Deadlock Wiki project</p>
-
                 <div class="bio-block">
                     <h3>Alizan Talov</h3>
                     <p><strong>Role:</strong> Developer #1</p>
-                    <p>Created characters and Paradox pages</p>
                 </div>
-
                 <div class="bio-block">
                     <h3>Ruslan Suleimen</h3>
                     <p><strong>Role:</strong> Developer #2</p>
-                    <p>Created home and Apollo pages</p>
                 </div>
             </section>
 
         </main>
 
-        <!-- Task 3: Grid Area - Footer -->
         <footer>
             <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
         </footer>
 
     </div>
 
+    <!-- Task 3: Popup Modal Structure -->
+    <div id="popup-modal" class="modal-overlay">
+        <div class="modal-content-custom">
+            <span id="close-modal-btn" class="close-btn">&times;</span>
+            <h3 style="color: #69E799; margin-bottom: 10px;">Subscribe for Wiki Updates</h3>
+            <p style="font-size: 0.9rem;">Stay updated with the latest Deadlock hero guides and patch notes!</p>
+            <form onsubmit="event.preventDefault(); alert('Subscribed successfully!'); document.getElementById('popup-modal').style.display='none';">
+                <div class="form-group">
+                    <label style="font-size: 0.85rem;">Email Address:</label>
+                    <input type="email" required placeholder="Enter your email" style="width: 100%;">
+                </div>
+                <button type="submit" class="card-btn" style="width: 100%; margin-top: 10px;">Subscribe Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript connection -->
+    <script src="js/script.js"></script>
 </body>
 </html>
