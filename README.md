@@ -1,78 +1,65 @@
-# Deadlock Fan Wiki
-
-A community-driven wiki website for Valve's hero shooter game Deadlock, developed as part of Assignment #4: Introduction to JavaScript.
-
----
-
-## Team Information
-
-* **Team Name:** Golden Goose Egg Team
-* **Group:** SE-2508
-* **Team Members:**
-  * Alizan Talov (Developer #1)
-  * Ruslan Suleimen (Developer #2)
-
----
+# Deadlock Wiki - Advanced JavaScript & DOM Manipulation Project
 
 ## Project Overview
+This project is an interactive web application dedicated to Valve's hero-shooter game Deadlock. Developed as part of Assignment 5 for the Frontend Development course at Astana IT University, the project demonstrates advanced JavaScript principles, dynamic DOM manipulation, asynchronous event handling, synthesized audio effects, and modern CSS layout techniques.
 
-The Deadlock Fan Wiki is a multi-page web application providing detailed lore, hero statistics, and interactive media galleries for heroes like *Apollo*, *Paradox*, *Wraith*, and others. 
+## Team Information
+* **Team Name:** Golden Goose Egg
+* **Team Members:**
+  * Alizan Talov
+  * Ruslan Suleimen
 
-In this fourth assignment, dynamic client-side interactivity was implemented using vanilla JavaScript to enhance user experience and satisfy assignment guidelines.
+## Key Features Implemented
 
----
+### Part 1: Advanced JavaScript & DOM Manipulation
+1. **Dynamic Style & Theme Changes:**
+   * Live theme background switcher modifying CSS properties dynamically without breaking application layout.
+   * Day/Night contrast styling and element-level highlighting.
 
-## Features Implemented (Assignment #4)
+2. **Interactive Rating System:**
+   * Star rating component created using `document.querySelectorAll`.
+   * Real-time dynamic updates of selected rating values and visual feedback on star hover/selection.
 
-1. **Form Validation (Task 1):**
-   * Real-time and submit-time JavaScript validation for user input on `feedback.html`.
-   * Checks for valid email address syntax.
-   * Enforces minimum password length (6 characters) and verifies password confirmation matching.
-   * Displays clear inline error messages.
+3. **Role-Based Content Filtering:**
+   * Interactive category filter buttons utilizing higher-order array methods (`filter`, `forEach`) and JavaScript objects.
+   * Logical execution flow controlled by `switch` statements to toggle gallery visibility according to selected hero roles (Duelist, Tank, Initiator, or All).
 
-2. **FAQ Accordion (Task 2):**
-   * Interactive Q&A accordion section on the home page (`index.html`).
-   * Smoothly toggles visibility of answers when clicking question headers.
+4. **Event Handling & Keyboard Navigation:**
+   * Asynchronous event listeners integrated across all interactive components.
+   * Full keyboard navigation support allowing users to tab through menu links using the Left and Right Arrow keys (`ArrowLeft`, `ArrowRight`).
 
-3. **Popup Subscription Modal (Task 3):**
-   * Dynamic modal dialog triggered by clicking the "Subscribe to Wiki" button in the sidebar.
-   * Can be dismissed via a close button or by clicking anywhere outside the modal overlay.
+5. **Form Validation & Asynchronous Interactions:**
+   * Feedback form validation including email format verification, regex-based password strength requirements, and password confirmation matching.
+   * Dynamic error feedback messages rendered directly in the DOM without reloading the page.
+   * Instant form resetting logic using DOM node iteration.
 
-4. **Dynamic Background Color Switcher (Task 4):**
-   * Sidebar button that dynamically cycles the website's background color through a predefined dark theme palette using JavaScript DOM manipulation.
+6. **Synthesized Audio Effects:**
+   * Sound feedback generated using the native browser Web Audio API (`AudioContext`).
+   * Custom audio cues played on button clicks, filter selections, and star rating interactions.
 
-5. **Live Clock & Date Display (Task 5):**
-   * A real-time widget embedded in the sidebar that displays the current formatted date and time (e.g., *"October 21, 2026, 07:49 PM"*) updated every second.
-
----
-
-## Tech Stack
-
-* **HTML5:** Semantic site structure and accessibility.
-* **CSS3 & Bootstrap 5:** Custom styling, dark mode theme, Flexbox/Grid layouts, and responsive components.
-* **JavaScript (ES6+):** DOM manipulation, event listeners, interval timers, and form validation.
-
----
+7. **Modal Overlay & Dynamic Widgets:**
+   * Popup subscription modal triggered via event listeners with outside-click dismissal support.
+   * Real-time live digital clock updating every second using JavaScript `Date` objects and intervals.
 
 ## Project Structure
+* `index.html` - Primary landing page containing the hero showcase, gallery, filter controls, accordion FAQ, and subscription modal.
+* `characters.html` - Detailed hero breakdown, tier rankings, and attribute tables.
+* `apollo.html` - Dedicated hero profile page for Apollo.
+* `paradox.html` - Dedicated hero profile page for Paradox.
+* `feedback.html` - Interactive user feedback submission form with real-time validation.
+* `css/style.css` - Centralized stylesheet incorporating CSS Grid, Flexbox, layout transitions, and element animations.
+* `js/script.js` - Main JavaScript file containing all interactive logic, DOM handlers, audio synthesis, and validation routines.
 
-```text
-.
-├── css/
-│   └── style.css            # Custom CSS styles (Grid, Flexbox, Modal, Accordion)
-├── js/
-│   └── script.js            # JavaScript file (Validation, Clock, Accordion, Modal, Bg Switcher)
-├── images/                  # Local image assets
-├── index.html               # Home Page (FAQ Accordion, Hero Gallery, Modal Structure)
-├── characters.html          # Character Roster & Attribute Matrix
-├── apollo.html              # Hero Spotlight: Apollo
-├── paradox.html             # Hero Spotlight: Paradox
-├── feedback.html            # User Feedback & Form Validation
-└── README.md                # Project documentation
-```
+## Installation and Setup
+1. Clone the repository to your local machine:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd project-folder
+   ```
+3. Open `index.html` in any modern web browser (Google Chrome, Mozilla Firefox, or Microsoft Edge).
 
----
-
-## Live Demo & Deployment
-
-* **Deployed Website URL:** [[https://github.com/torsio487/Web]](https://torsio487.github.io/Web/)
+## Deployment
+The project is deployed via GitHub Pages / Netlify and can be accessed online at the deployed project URL specified in the project report.
