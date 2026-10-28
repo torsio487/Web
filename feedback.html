@@ -12,7 +12,7 @@
 
         <header id="main-header">
             <div class="header-logo">
-                <img src="https://cdn.deadlock.wiki/Mina_card.png" alt="Deadlock Logo">
+                <img src="pictures/Mina_card.png" alt="Deadlock Logo">
                 <span>Deadlock Wiki</span>
             </div>
             <nav class="nav-menu">
@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="password">Account Password (min 6 chars):</label>
+                        <label for="password">Account Password (min 8 chars):</label>
                         <input type="password" id="password" name="password" placeholder="Enter password" required>
                         <span id="pass-error" class="error-msg"></span>
                     </div>
@@ -86,7 +86,10 @@
                         <textarea id="message" name="message" rows="5" placeholder="Write your feedback here..." required></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                    <div style="display: flex; gap: 10px;">
+                        <button type="submit" class="submit-btn btn-animated">Submit Feedback</button>
+                        <button type="button" id="reset-form-btn" class="submit-btn btn-animated" style="background-color: #e94560;">Reset Form</button>
+                    </div>
                 </form>
             </section>
 

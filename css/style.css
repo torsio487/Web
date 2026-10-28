@@ -318,9 +318,7 @@ footer {
     }
 }
 
-/* Assignment 4 */
-
-/* Task 1: Form Validation Error Styling */
+/* Form Validation Error Styling */
 .error-msg {
     color: #e94560;
     font-size: 0.85rem;
@@ -357,7 +355,7 @@ footer {
     border-top: 1px solid #0f3460;
 }
 
-/* Task 3: Popup Modal Styling */
+/* Popup Modal Styling */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -425,6 +423,82 @@ footer {
 }
 
 .btn-theme:hover {
+    background-color: #69E799;
+    color: #121212;
+}
+
+/* Additions for Assignment 5 */
+
+/* Interactive Rating Stars */
+.rating-container {
+    display: flex;
+    gap: 8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.star {
+    color: #444;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.star.selected, .star:hover {
+    color: #ffc107;
+    transform: scale(1.2);
+}
+
+/* Sound Effect / Interactive Button Feedback Animation */
+.btn-animated {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-animated:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px #69E799;
+}
+
+/* Dynamic Notification Alert */
+.notification-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1a1a2e;
+    color: #69E799;
+    border: 2px solid #69E799;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 2000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Filter Buttons Styling */
+.filter-btn-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filter-btn {
+    background-color: #16213e;
+    color: #ffffff;
+    border: 1px solid #0f3460;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
     background-color: #69E799;
     color: #121212;
 }

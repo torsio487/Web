@@ -12,7 +12,7 @@
 
         <header id="main-header">
             <div class="header-logo">
-                <img src="https://cdn.deadlock.wiki/Mina_card.png" alt="Deadlock Logo">
+                <img src="pictures/Mina_card.png" alt="Deadlock Logo">
                 <span>Deadlock Wiki</span>
             </div>
             <nav class="nav-menu">
@@ -72,21 +72,21 @@
                 
                 <div class="card-row-container">
                     <div class="flex-card">
-                        <img src="https://images-ext-1.discordapp.net/external/aKBFCqkb3YOMna6OJmXke_SZYba1k_sNJaNvfvV9HQ8/https/cdn.deadlock.wiki/Apollo_card.png?format=webp&quality=lossless" alt="Apollo">
+                        <img src="pictures/Apollo_card (1).png" alt="Apollo">
                         <h4>Apollo</h4>
                         <p>Prince of Ixia and highly skilled fencer with high mobility and rapier strikes.</p>
                         <a href="apollo.html" class="card-btn">Read Lore</a>
                     </div>
 
                     <div class="flex-card">
-                        <img src="https://cdn.deadlock.wiki/Paradox_card.png" alt="Paradox">
+                        <img src="pictures/Paradox_card (1).png" alt="Paradox">
                         <h4>Paradox</h4>
                         <p>Master thief capable of manipulating time, freezing foes, and swapping positions.</p>
                         <a href="paradox.html" class="card-btn">Read Lore</a>
                     </div>
 
                     <div class="flex-card">
-                        <img src="https://cdn.deadlock.wiki/Wraith_card.png" alt="Wraith">
+                        <img src="pictures/Wraith_card.png" alt="Wraith">
                         <h4>Wraith</h4>
                         <p>High-damage duelist specializing in single-target burst and rapid gunplay.</p>
                         <a href="characters.html" class="card-btn">View Stats</a>
@@ -120,20 +120,45 @@
                 </div>
             </section>
 
+            <!-- Advanced JS: Role Filter & Interactive Star Rating -->
+            <section class="card">
+                <h2>Interactive Hero Rating & Filtering</h2>
+                <p>Filter heroes by role or rate your experience with Deadlock Wiki:</p>
+                
+                <div class="filter-btn-group">
+                    <button class="filter-btn btn-animated active" data-category="all">All Roles</button>
+                    <button class="filter-btn btn-animated" data-category="duelist">Duelist</button>
+                    <button class="filter-btn btn-animated" data-category="tank">Tank</button>
+                    <button class="filter-btn btn-animated" data-category="initiator">Initiator</button>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <h3>Rate this Wiki:</h3>
+                    <div class="rating-container">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <p id="rating-value" style="font-size: 0.9rem; margin-top: 5px; color: #69E799;"></p>
+                </div>
+            </section>
+
             <section id="hero-gallery" class="card">
                 <h2>Hero Snapshots Gallery</h2>
                 <p>Hover over any image to view details:</p>
                 
                 <div class="gallery-grid">
-                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/aKBFCqkb3YOMna6OJmXke_SZYba1k_sNJaNvfvV9HQ8/https/cdn.deadlock.wiki/Apollo_card.png?format=webp&quality=lossless" alt="Apollo"><div class="gallery-caption">Apollo - Duelist</div></div>
-                    <div class="gallery-item"><img src="https://cdn.deadlock.wiki/Paradox_card.png" alt="Paradox"><div class="gallery-caption">Paradox - Initiator</div></div>
-                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/ZU2_0tZ3RMvvqWl2Autc_b786JKcxYyrGLV6vc9bAGY/https/cdn.deadlock.wiki/Wraith_card.png?format=webp&quality=lossless" alt="Wraith"><div class="gallery-caption">Wraith - Carry</div></div>
-                    <div class="gallery-item"><img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Action"><div class="gallery-caption">Apollo Combat</div></div>
-                    <div class="gallery-item"><img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Action"><div class="gallery-caption">Paradox Swap</div></div>
-                    <div class="gallery-item"><img src="https://preview.redd.it/bioshock-style-sky-rail-guards-have-been-removed-opting-for-v0-tcio14kiq2fg1.jpg?width=1080&crop=smart&auto=webp&s=3dd9c41374547551bb95cba4e919bf19cb7da959" alt="Skyrails"><div class="gallery-caption">Skyrail Transit</div></div>
-                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/LuzNGZ-BJxvdfSuJwGJNPgzvEVYAmXazK2oNWAsGeJo/https/cdn.deadlock.wiki/Infernus_card.png?format=webp&quality=lossless" alt="Infernus"><div class="gallery-caption">Infernus - Bruiser</div></div>
-                    <div class="gallery-item"><img src="https://cdn.deadlock.wiki/Celeste_card.png" alt="Celeste"><div class="gallery-caption">Celeste - Tank</div></div>
-                    <div class="gallery-item"><img src="https://images-ext-1.discordapp.net/external/fDZDuxjYFgVBbr5dG3PHy1Ywgoym65ppiHBRQmenenc/https/cdn.deadlock.wiki/Mo_%2526_Krill_card.png?format=webp&quality=lossless" alt="Mo & Krill"><div class="gallery-caption">Mo & Krill - Tank</div></div>
+                    <div class="gallery-item" data-role="duelist"><img src="pictures/Apollo_card (1).png" alt="Apollo"><div class="gallery-caption">Apollo - Duelist</div></div>
+                    <div class="gallery-item" data-role="initiator"><img src="pictures/Paradox_card (1).png" alt="Paradox"><div class="gallery-caption">Paradox - Initiator</div></div>
+                    <div class="gallery-item" data-role="duelist"><img src="pictures/Wraith_card.png" alt="Wraith"><div class="gallery-caption">Wraith - Carry</div></div>
+                    <div class="gallery-item" data-role="duelist"><img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Action"><div class="gallery-caption">Apollo Combat</div></div>
+                    <div class="gallery-item" data-role="initiator"><img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Action"><div class="gallery-caption">Paradox Swap</div></div>
+                    <div class="gallery-item" data-role="other"><img src="pictures/images (2).jpg" alt="Skyrails"><div class="gallery-caption">Skyrail Transit</div></div>
+                    <div class="gallery-item" data-role="bruiser"><img src="pictures/Infernus_card.png" alt="Infernus"><div class="gallery-caption">Infernus - Bruiser</div></div>
+                    <div class="gallery-item" data-role="tank"><img src="pictures/Celeste_card.png" alt="Celeste"><div class="gallery-caption">Celeste - Tank</div></div>
+                    <div class="gallery-item" data-role="tank"><img src="pictures/Mo_%26_Krill_card.png" alt="Mo & Krill"><div class="gallery-caption">Mo & Krill - Tank</div></div>
                 </div>
             </section>
 
