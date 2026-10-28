@@ -50,16 +50,5 @@ This project is an interactive web application dedicated to Valve's hero-shooter
 * `css/style.css` - Centralized stylesheet incorporating CSS Grid, Flexbox, layout transitions, and element animations.
 * `js/script.js` - Main JavaScript file containing all interactive logic, DOM handlers, audio synthesis, and validation routines.
 
-## Installation and Setup
-1. Clone the repository to your local machine:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Navigate into the project directory:
-   ```bash
-   cd project-folder
-   ```
-3. Open `index.html` in any modern web browser (Google Chrome, Mozilla Firefox, or Microsoft Edge).
-
 ## Deployment
 The project is deployed via GitHub Pages / Netlify and can be accessed online at the deployed project URL specified in the project report.
