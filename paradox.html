@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deadlock Wiki - Paradox</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 <body>
+
+    <div class="scroll-progress-bar"></div>
 
     <div class="site-container">
 
@@ -24,7 +27,6 @@
             </nav>
         </header>
 
-        <!-- Grid Sidebar -->
         <aside class="sidebar">
             <div class="clock-widget">
                 <small style="color: #888;">Current Time:</small>
@@ -36,20 +38,23 @@
                 <li><a href="#abilities">Signature Abilities</a></li>
                 <li><a href="apollo.html">Previous Hero: Apollo</a></li>
             </ul>
+            <button id="theme-toggle-btn" class="btn-theme" style="margin-top: 15px;">Toggle Light/Dark Theme</button>
             <hr style="border-color: #0f3460; margin: 20px 0;">
             <h3>Quick Stats</h3>
             <p style="font-size: 0.85rem;"><strong>Role:</strong> Initiator / Time Manipulator</p>
-            <p style="font-size: 0.85rem;"><strong>Affiliation:</strong> Paradox    </p>
+            <p style="font-size: 0.85rem;"><strong>Affiliation:</strong> Paradox</p>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <section class="card profile-card">
                 <h2>Hero Focus: Paradox</h2>
                 
-                <img src="pictures/Paradox_card (1).png" alt="Paradox Character Portrait" class="profile-img">
+                <img src="pictures/Paradox_card (1).png" alt="Paradox Character Portrait" class="profile-img" data-src="pictures/Paradox_card (1).png">
 
-                <h3 id="bio">Biography & Lore</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <h3 id="bio" style="margin: 0;">Biography & Lore</h3>
+                    <button class="copy-btn" data-clipboard-text="Paradox is both the name of this Hero and the name of their Thieves' Guild, specializing in stealing the untouchable and breaking into ultra-secure facilities.">Copy Lore</button>
+                </div>
                 <p>Paradox is both the name of this Hero and the name of their Thieves' Guild, specializing in stealing the untouchable and breaking into ultra-secure facilities. Their motives are unclear, except for a certain level of delight that its members seem to take in snubbing the world's biggest corporations and governments.</p>
 
                 <h3 id="abilities">Signature Abilities</h3>
@@ -60,7 +65,7 @@
                     <li><strong>Paradoxical Swap:</strong> Switches physical locations with a targeted enemy hero.</li>
                 </ul>
 
-                <img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Gameplay Screenshot" class="content-img">
+                <img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Gameplay Screenshot" class="content-img" data-src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif">
             </section>
         </main>
 
@@ -71,6 +76,5 @@
     </div>
 
 <script src="js/script.js"></script>
-
 </body>
 </html>

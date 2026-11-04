@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deadlock Wiki - Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 <body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar"></div>
 
     <div class="site-container">
 
@@ -25,7 +30,6 @@
         </header>
 
         <aside class="sidebar">
-            <!-- Task 5: Live Clock -->
             <div class="clock-widget">
                 <small style="color: #888;">Current Time:</small>
                 <div id="live-clock">Loading time...</div>
@@ -35,14 +39,15 @@
             <ul>
                 <li><a href="#welcome">Welcome</a></li>
                 <li><a href="#featured-heroes">Featured Heroes</a></li>
+                <li><a href="#hero-ratings">Hero Ratings</a></li>
                 <li><a href="#faq-section">FAQ Accordion</a></li>
                 <li><a href="#hero-gallery">Hero Gallery</a></li>
                 <li><a href="#about-us">About Team</a></li>
             </ul>
 
-            <!-- Task 3 & 4: Modal & Theme Buttons -->
-            <button id="open-modal-btn" class="btn-theme" style="margin-top: 15px;">Subscribe to Wiki</button>
-            <button id="change-bg-btn" class="btn-theme">Change Theme Color</button>
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle-btn" class="btn-theme" style="margin-top: 15px;">Toggle Light/Dark Theme</button>
+            <button id="open-modal-btn" class="btn-theme">Subscribe to Wiki</button>
 
             <hr style="border-color: #0f3460; margin: 20px 0;">
             <h3>Latest Updates</h3>
@@ -63,7 +68,7 @@
                     <li>Diverse hero roster with distinct playstyles</li>
                 </ul>
 
-                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcno2NTN6ZTB4M2s2aHcwcmx2b3I0MThpc3oyb3dscnY0bTNoazNhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zudVphGuW4loBNWbG4/giphy.gif" alt="Deadlock Gameplay Overview" class="content-img">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcno2NTN6ZTB4M2s2aHcwcmx2b3I0MThpc3oyb3dscnY0bTNoazNhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zudVphGuW4loBNWbG4/giphy.gif" alt="Deadlock Gameplay Overview" class="content-img" data-src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcno2NTN6ZTB4M2s2aHcwcmx2b3I0MThpc3oyb3dscnY0bTNoazNhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zudVphGuW4loBNWbG4/giphy.gif">
             </section>
 
             <section id="featured-heroes" class="card">
@@ -72,21 +77,21 @@
                 
                 <div class="card-row-container">
                     <div class="flex-card">
-                        <img src="pictures/Apollo_card (1).png" alt="Apollo">
+                        <img src="pictures/Apollo_card (1).png" alt="Apollo" data-src="pictures/Apollo_card (1).png">
                         <h4>Apollo</h4>
                         <p>Prince of Ixia and highly skilled fencer with high mobility and rapier strikes.</p>
                         <a href="apollo.html" class="card-btn">Read Lore</a>
                     </div>
 
                     <div class="flex-card">
-                        <img src="pictures/Paradox_card (1).png" alt="Paradox">
+                        <img src="pictures/Paradox_card (1).png" alt="Paradox" data-src="pictures/Paradox_card (1).png">
                         <h4>Paradox</h4>
                         <p>Master thief capable of manipulating time, freezing foes, and swapping positions.</p>
                         <a href="paradox.html" class="card-btn">Read Lore</a>
                     </div>
 
                     <div class="flex-card">
-                        <img src="pictures/Wraith_card.png" alt="Wraith">
+                        <img src="pictures/Wraith_card.png" alt="Wraith" data-src="pictures/Wraith_card.png">
                         <h4>Wraith</h4>
                         <p>High-damage duelist specializing in single-target burst and rapid gunplay.</p>
                         <a href="characters.html" class="card-btn">View Stats</a>
@@ -94,7 +99,37 @@
                 </div>
             </section>
 
-            <!-- Task 2: FAQ Accordion -->
+            <!-- Rating Specific Heroes in Index -->
+            <section id="hero-ratings" class="card">
+                <h2>Rate Specific Featured Heroes</h2>
+                <p>Give your community rating to individual heroes:</p>
+                
+                <div class="hero-rating-box" data-hero="Apollo">
+                    <h4>Apollo Rating</h4>
+                    <div class="rating-container" data-target-hero="Apollo">
+                        <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <p class="hero-rating-result" style="font-size: 0.85rem; color: #69E799;">No rating yet</p>
+                </div>
+
+                <div class="hero-rating-box" data-hero="Paradox" style="margin-top: 15px;">
+                    <h4>Paradox Rating</h4>
+                    <div class="rating-container" data-target-hero="Paradox">
+                        <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <p class="hero-rating-result" style="font-size: 0.85rem; color: #69E799;">No rating yet</p>
+                </div>
+
+                <div class="hero-rating-box" data-hero="Wraith" style="margin-top: 15px;">
+                    <h4>Wraith Rating</h4>
+                    <div class="rating-container" data-target-hero="Wraith">
+                        <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
+                    </div>
+                    <p class="hero-rating-result" style="font-size: 0.85rem; color: #69E799;">No rating yet</p>
+                </div>
+            </section>
+
+            <!-- FAQ Accordion -->
             <section id="faq-section" class="card">
                 <h2>Frequently Asked Questions</h2>
                 
@@ -120,45 +155,20 @@
                 </div>
             </section>
 
-            <!-- Advanced JS: Role Filter & Interactive Star Rating -->
-            <section class="card">
-                <h2>Interactive Hero Rating & Filtering</h2>
-                <p>Filter heroes by role or rate your experience with Deadlock Wiki:</p>
-                
-                <div class="filter-btn-group">
-                    <button class="filter-btn btn-animated active" data-category="all">All Roles</button>
-                    <button class="filter-btn btn-animated" data-category="duelist">Duelist</button>
-                    <button class="filter-btn btn-animated" data-category="tank">Tank</button>
-                    <button class="filter-btn btn-animated" data-category="initiator">Initiator</button>
-                </div>
-
-                <div style="margin-top: 15px;">
-                    <h3>Rate this Wiki:</h3>
-                    <div class="rating-container">
-                        <span class="star" data-value="1">&#9733;</span>
-                        <span class="star" data-value="2">&#9733;</span>
-                        <span class="star" data-value="3">&#9733;</span>
-                        <span class="star" data-value="4">&#9733;</span>
-                        <span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <p id="rating-value" style="font-size: 0.9rem; margin-top: 5px; color: #69E799;"></p>
-                </div>
-            </section>
-
             <section id="hero-gallery" class="card">
                 <h2>Hero Snapshots Gallery</h2>
                 <p>Hover over any image to view details:</p>
                 
                 <div class="gallery-grid">
-                    <div class="gallery-item" data-role="duelist"><img src="pictures/Apollo_card (1).png" alt="Apollo"><div class="gallery-caption">Apollo - Duelist</div></div>
-                    <div class="gallery-item" data-role="initiator"><img src="pictures/Paradox_card (1).png" alt="Paradox"><div class="gallery-caption">Paradox - Initiator</div></div>
-                    <div class="gallery-item" data-role="duelist"><img src="pictures/Wraith_card.png" alt="Wraith"><div class="gallery-caption">Wraith - Carry</div></div>
-                    <div class="gallery-item" data-role="duelist"><img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Action"><div class="gallery-caption">Apollo Combat</div></div>
-                    <div class="gallery-item" data-role="initiator"><img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Action"><div class="gallery-caption">Paradox Swap</div></div>
-                    <div class="gallery-item" data-role="other"><img src="pictures/images (2).jpg" alt="Skyrails"><div class="gallery-caption">Skyrail Transit</div></div>
-                    <div class="gallery-item" data-role="bruiser"><img src="pictures/Infernus_card.png" alt="Infernus"><div class="gallery-caption">Infernus - Bruiser</div></div>
-                    <div class="gallery-item" data-role="tank"><img src="pictures/Celeste_card.png" alt="Celeste"><div class="gallery-caption">Celeste - Tank</div></div>
-                    <div class="gallery-item" data-role="tank"><img src="pictures/Mo_%26_Krill_card.png" alt="Mo & Krill"><div class="gallery-caption">Mo & Krill - Tank</div></div>
+                    <div class="gallery-item" data-role="duelist"><img src="pictures/Apollo_card (1).png" alt="Apollo" data-src="pictures/Apollo_card (1).png"><div class="gallery-caption">Apollo - Duelist</div></div>
+                    <div class="gallery-item" data-role="initiator"><img src="pictures/Paradox_card (1).png" alt="Paradox" data-src="pictures/Paradox_card (1).png"><div class="gallery-caption">Paradox - Initiator</div></div>
+                    <div class="gallery-item" data-role="duelist"><img src="pictures/Wraith_card.png" alt="Wraith" data-src="pictures/Wraith_card.png"><div class="gallery-caption">Wraith - Carry</div></div>
+                    <div class="gallery-item" data-role="duelist"><img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Action" data-src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif"><div class="gallery-caption">Apollo Combat</div></div>
+                    <div class="gallery-item" data-role="initiator"><img src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif" alt="Paradox Action" data-src="https://media1.tenor.com/m/nnmZL1YzI6cAAAAd/deadlock-paradox.gif"><div class="gallery-caption">Paradox Swap</div></div>
+                    <div class="gallery-item" data-role="other"><img src="pictures/images (2).jpg" alt="Skyrails" data-src="pictures/images (2).jpg"><div class="gallery-caption">Skyrail Transit</div></div>
+                    <div class="gallery-item" data-role="bruiser"><img src="pictures/Infernus_card.png" alt="Infernus" data-src="pictures/Infernus_card.png"><div class="gallery-caption">Infernus - Bruiser</div></div>
+                    <div class="gallery-item" data-role="tank"><img src="pictures/Celeste_card.png" alt="Celeste" data-src="pictures/Celeste_card.png"><div class="gallery-caption">Celeste - Tank</div></div>
+                    <div class="gallery-item" data-role="tank"><img src="pictures/Mo_%26_Krill_card.png" alt="Mo & Krill" data-src="pictures/Mo_%26_Krill_card.png"><div class="gallery-caption">Mo & Krill - Tank</div></div>
                 </div>
             </section>
 
@@ -183,23 +193,25 @@
 
     </div>
 
-    <!-- Task 3: Popup Modal Structure -->
+    <!-- Popup Greeting Modal (after delay) -->
     <div id="popup-modal" class="modal-overlay">
         <div class="modal-content-custom">
             <span id="close-modal-btn" class="close-btn">&times;</span>
-            <h3 style="color: #69E799; margin-bottom: 10px;">Subscribe for Wiki Updates</h3>
-            <p style="font-size: 0.9rem;">Stay updated with the latest Deadlock hero guides and patch notes!</p>
-            <form onsubmit="event.preventDefault(); alert('Subscribed successfully!'); document.getElementById('popup-modal').style.display='none';">
+            <h3 style="color: #69E799; margin-bottom: 10px;"> Welcome to Deadlock Wiki!</h3>
+            <p style="font-size: 0.9rem;">Stay updated with the latest Deadlock hero guides, tier lists, and patch notes! Subscribe below:</p>
+            <form id="subscribe-form">
                 <div class="form-group">
                     <label style="font-size: 0.85rem;">Email Address:</label>
                     <input type="email" required placeholder="Enter your email" style="width: 100%;">
                 </div>
-                <button type="submit" class="card-btn" style="width: 100%; margin-top: 10px;">Subscribe Now</button>
+                <button type="submit" class="card-btn" style="width: 100%; margin-top: 10px;">
+                    <span class="btn-text">Subscribe Now</span>
+                    <span class="spinner" style="display:none;"></span>
+                </button>
             </form>
         </div>
     </div>
 
-    <!-- JavaScript connection -->
     <script src="js/script.js"></script>
 </body>
 </html>

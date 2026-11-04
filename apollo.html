@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deadlock Wiki - Apollo</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 <body>
 
-    <!-- Grid Container -->
+    <div class="scroll-progress-bar"></div>
+
     <div class="site-container">
 
-        <!-- Flexbox Header -->
         <header id="main-header">
             <div class="header-logo">
                 <img src="pictures/Mina_card.png" alt="Deadlock Logo">
@@ -26,7 +27,6 @@
             </nav>
         </header>
 
-        <!-- Grid Sidebar -->
         <aside class="sidebar">
             <div class="clock-widget">
                 <small style="color: #888;">Current Time:</small>
@@ -38,20 +38,23 @@
                 <li><a href="#abilities">Signature Abilities</a></li>
                 <li><a href="paradox.html">Next Hero: Paradox</a></li>
             </ul>
+            <button id="theme-toggle-btn" class="btn-theme" style="margin-top: 15px;">Toggle Light/Dark Theme</button>
             <hr style="border-color: #0f3460; margin: 20px 0;">
             <h3>Quick Stats</h3>
             <p style="font-size: 0.85rem;"><strong>Role:</strong> Duelist / Mobile Melee</p>
             <p style="font-size: 0.85rem;"><strong>Origin:</strong> Ixia</p>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <section class="card profile-card">
                 <h2>Hero Focus: Apollo</h2>
                 
-                <img src="pictures/Apollo_card (1).png" alt="Apollo Character Portrait" class="profile-img">
+                <img src="pictures/Apollo_card (1).png" alt="Apollo Character Portrait" class="profile-img" data-src="pictures/Apollo_card (1).png">
 
-                <h3 id="bio">Biography & Lore</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                    <h3 id="bio" style="margin: 0;">Biography & Lore</h3>
+                    <button class="copy-btn" data-clipboard-text="As the prince of Ixia, Apollo comes from a land of beauty, tradition and conflict. Political violence was common in Ixia, but when Apollo was sent to New York for his own safety, he knew the situation was serious.">Copy Lore</button>
+                </div>
                 <p>As the prince of Ixia, Apollo comes from a land of beauty, tradition and conflict. Political violence was common in Ixia, but when Apollo was sent to New York for his own safety, he knew the situation was serious. Now a highly skilled fencer at Blackmore Academy, Apollo knows that in due time, he will be called back to Ixia... and when he returns, he will show why he's worthy to wield his family's ancestral blade.</p>
 
                 <h3 id="abilities">Signature Abilities</h3>
@@ -62,11 +65,10 @@
                     <li><strong>Itani Lo Sahn:</strong> Apollo does a AOE deadly dashstrike that deals extra damage to low hp foes.</li>
                 </ul>
 
-                <img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Gameplay Screenshot" class="content-img">
+                <img src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif" alt="Apollo Gameplay Screenshot" class="content-img" data-src="https://media1.tenor.com/m/4LuzGWFWoXIAAAAC/deadlock-valve-rem-deadlock-valve-apollo.gif">
             </section>
         </main>
 
-        <!-- Grid Footer -->
         <footer>
             <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
         </footer>
@@ -74,6 +76,5 @@
     </div>
 
 <script src="js/script.js"></script>
-
 </body>
 </html>

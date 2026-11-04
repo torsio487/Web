@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deadlock Wiki - Feedback & About Us</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 <body>
+
+    <div class="scroll-progress-bar"></div>
 
     <div class="site-container">
 
@@ -32,10 +35,10 @@
 
             <h3>Page Navigation</h3>
             <ul>
-                <li><a href="#feedback-section">Feedback Form</a></li>
+                <li><a href="#feedback-section">Feedback Wizard</a></li>
                 <li><a href="#about-us-section">About Developers</a></li>
             </ul>
-            <button id="change-bg-btn" class="btn-theme">Change Theme Color</button>
+            <button id="theme-toggle-btn" class="btn-theme" style="margin-top: 15px;">Toggle Light/Dark Theme</button>
             <hr style="border-color: #0f3460; margin: 20px 0;">
             <h3>Contact Info</h3>
             <p style="font-size: 0.85rem;">Golden Goose Egg Team</p>
@@ -43,53 +46,85 @@
 
         <main class="main-content">
             <section id="feedback-section" class="card">
-                <h2>Deadlock Wiki Feedback</h2>
-                <p>Help us improve our community wiki! Send us your thoughts, corrections, or feature suggestions.</p>
+                <h2>Deadlock Wiki Multi-Step Feedback</h2>
+                <p>Help us improve our community wiki! Complete the 3 steps below to send us your thoughts.</p>
                 
-                <!-- Task 1: Form Validation -->
-                <form id="feedback-form" action="#" method="POST" novalidate>
-                    <div class="form-group">
-                        <label for="nickname">Your Nickname:</label>
-                        <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
+                <!-- Requirement 2: Multi-step feedback form (3 stages) -->
+                <form id="multistep-feedback-form" action="#" method="POST" novalidate>
+                    
+                    <!-- Progress Indicator -->
+                    <div class="step-indicator">
+                        <span class="step-dot active" data-step="1">1. Account</span> &rarr; 
+                        <span class="step-dot" data-step="2">2. Category</span> &rarr; 
+                        <span class="step-dot" data-step="3">3. Message</span>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                        <span id="email-error" class="error-msg"></span>
+                    <!-- STEP 1 -->
+                    <div class="form-step active" data-step="1">
+                        <h3>Step 1: Credentials & Identity</h3>
+                        <div class="form-group">
+                            <label for="nickname">Your Nickname:</label>
+                            <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <span id="email-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Account Password (min 8 chars):</label>
+                            <input type="password" id="password" name="password" placeholder="Enter password" required>
+                            <span id="pass-error" class="error-msg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password:</label>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" required>
+                            <span id="confirm-pass-error" class="error-msg"></span>
+                        </div>
+
+                        <button type="button" class="submit-btn btn-next" style="margin-top: 10px;">Next Step &rarr;</button>
                     </div>
 
-                    <div class="form-group">
-                        <label for="password">Account Password (min 8 chars):</label>
-                        <input type="password" id="password" name="password" placeholder="Enter password" required>
-                        <span id="pass-error" class="error-msg"></span>
+                    <!-- STEP 2 -->
+                    <div class="form-step" data-step="2">
+                        <h3>Step 2: Feedback Classification</h3>
+                        <div class="form-group">
+                            <label for="category">Feedback Category:</label>
+                            <select id="category" name="category">
+                                <option value="content">Content Suggestion / Lore</option>
+                                <option value="bug">Bug Report / Display Issue</option>
+                                <option value="hero-guide">Hero Guide Submission</option>
+                                <option value="other">General Feedback</option>
+                            </select>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <button type="button" class="submit-btn btn-prev" style="background-color: #444;">&larr; Back</button>
+                            <button type="button" class="submit-btn btn-next">Next Step &rarr;</button>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="confirm-password">Confirm Password:</label>
-                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" required>
-                        <span id="confirm-pass-error" class="error-msg"></span>
+                    <!-- STEP 3 -->
+                    <div class="form-step" data-step="3">
+                        <h3>Step 3: Detailed Message & Submit</h3>
+                        <div class="form-group">
+                            <label for="message">Detailed Feedback:</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your feedback here..." required></textarea>
+                        </div>
+
+                        <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                            <button type="button" class="submit-btn btn-prev" style="background-color: #444;">&larr; Back</button>
+                            <!-- Task 6: Loading spinner on Submit -->
+                            <button type="submit" class="submit-btn btn-animated" id="form-submit-btn">
+                                <span class="btn-text">Submit Feedback</span>
+                                <span class="spinner" style="display:none;"></span>
+                            </button>
+                            <button type="button" id="reset-form-btn" class="submit-btn btn-animated" style="background-color: #e94560;">Reset Form</button>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="category">Feedback Category:</label>
-                        <select id="category" name="category">
-                            <option value="content">Content Suggestion / Lore</option>
-                            <option value="bug">Bug Report / Display Issue</option>
-                            <option value="hero-guide">Hero Guide Submission</option>
-                            <option value="other">General Feedback</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Detailed Feedback:</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Write your feedback here..." required></textarea>
-                    </div>
-
-                    <div style="display: flex; gap: 10px;">
-                        <button type="submit" class="submit-btn btn-animated">Submit Feedback</button>
-                        <button type="button" id="reset-form-btn" class="submit-btn btn-animated" style="background-color: #e94560;">Reset Form</button>
-                    </div>
                 </form>
             </section>
 
@@ -115,6 +150,6 @@
 
     </div>
 
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

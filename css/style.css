@@ -6,6 +6,50 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme Styling */
+body.light-theme {
+    background-color: #f0f2f5;
+    color: #222222;
+}
+body.light-theme .card,
+body.light-theme .sidebar,
+body.light-theme #main-header,
+body.light-theme footer,
+body.light-theme .modal-content-custom,
+body.light-theme .accordion-body,
+body.light-theme .notification-toast {
+    background-color: #ffffff;
+    color: #222222;
+    border-color: #dcdcdc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+body.light-theme .flex-card {
+    background-color: #f8f9fa;
+    border-color: #dcdcdc;
+}
+body.light-theme .form-group input, 
+body.light-theme .form-group select, 
+body.light-theme .form-group textarea,
+body.light-theme .clock-widget,
+body.light-theme .search-container input {
+    background-color: #ffffff;
+    color: #222222;
+    border-color: #cccccc;
+}
+
+/* Task 4: Scroll Progress Bar */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #69E799, #ff9f1c);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
 }
 
 h1, h2, h3 {
@@ -31,13 +75,11 @@ p {
     padding: 10px;
 }
 
-/* grid areas */
 #main-header { grid-area: header; }
 .sidebar { grid-area: sidebar; }
 .main-content { grid-area: main; }
 footer { grid-area: footer; }
 
-/* sidebar styling */
 .sidebar {
     background-color: #1a1a2e;
     padding: 20px;
@@ -64,14 +106,13 @@ footer { grid-area: footer; }
     text-decoration: underline;
 }
 
-/* flexbox navigation */
 #main-header {
     background-color: #1a1a2e;
     padding: 15px 30px;
     border-bottom: 4px solid #69E799;
     display: flex; 
-    justify-content: space-between; /* logo left, links right */
-    align-items: center; /* vertically centered */
+    justify-content: space-between;
+    align-items: center;
     border-radius: 8px;
 }
 
@@ -107,12 +148,15 @@ footer { grid-area: footer; }
     transition: color 0.3s, border-bottom 0.3s;
 }
 
+body.light-theme .nav-menu a {
+    color: #333333;
+}
+
 .nav-menu a:hover {
     color: #e94560;
     border-bottom: 2px solid #e94560;
 }
 
-/* cards */
 .card {
     background-color: #1a1a2e;
     margin-bottom: 2rem;
@@ -121,28 +165,26 @@ footer { grid-area: footer; }
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-/* flexbox card flow */
 .card-row-container {
     display: flex; 
     flex-direction: row;
-    gap: 20px; /* consistent gaps */
+    gap: 20px;
     justify-content: space-between;
-    align-items: stretch; /* ensures all cards have equal height */
+    align-items: stretch;
     margin-top: 15px;
 }
 
 .flex-card {
-    flex: 1; /* equal width distribution */
+    flex: 1;
     display: flex;
     flex-direction: column;
     background-color: #16213e;
     border-radius: 8px;
     padding: 15px;
     border: 1px solid #0f3460;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* hover transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* lift and shadow hover effect */
 .flex-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(105, 231, 153, 0.3);
@@ -163,7 +205,7 @@ footer { grid-area: footer; }
 
 .flex-card p {
     font-size: 0.9rem;
-    flex-grow: 1; /* pushes button to bottom for neat alignment */
+    flex-grow: 1;
 }
 
 .card-btn {
@@ -176,17 +218,19 @@ footer { grid-area: footer; }
     border-radius: 4px;
     font-size: 0.85rem;
     transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .card-btn:hover {
     background-color: #ff9f1c;
 }
 
-/* img gallery (grid) */
+/* Gallery Grid */
 .gallery-grid {
-    display: grid; /* grid container */
-    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-    gap: 15px; /* consistent spacing */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     margin-top: 15px;
 }
 
@@ -206,10 +250,9 @@ footer { grid-area: footer; }
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); /* zoom effect on hover */
+    transform: scale(1.1);
 }
 
-/* caption overlay */
 .gallery-caption {
     position: absolute;
     bottom: 0;
@@ -220,15 +263,14 @@ footer { grid-area: footer; }
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    transform: translateY(100%); /* hidden initially */
+    transform: translateY(100%);
     transition: transform 0.3s ease;
 }
 
 .gallery-item:hover .gallery-caption {
-    transform: translateY(0); /* slide up on hover */
+    transform: translateY(0);
 }
 
-/* existing styles */
 #hero-table {
     width: 100%;
     border-collapse: collapse;
@@ -263,6 +305,7 @@ footer { grid-area: footer; }
     border: 4px solid #69E799;
     object-fit: cover;
     margin: 15px auto;
+    display: block;
 }
 
 .form-group {
@@ -296,7 +339,94 @@ footer {
     border-radius: 8px;
 }
 
-/* responsive breakpoint */
+/* Autocomplete suggestions dropdown (Task 2) */
+.autocomplete-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #16213e;
+    border: 1px solid #0f3460;
+    border-top: none;
+    z-index: 100;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 0 0 4px 4px;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    color: #69E799;
+    border-bottom: 1px solid #0f3460;
+}
+
+.autocomplete-item:hover {
+    background: #0f3460;
+    color: #ffffff;
+}
+
+/* Multi-Step Feedback Form (Requirement 2) */
+.step-indicator {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.step-dot {
+    color: #666;
+}
+
+.step-dot.active {
+    color: #69E799;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+/* Task 6: Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s ease-in-out infinite;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Task 8: Copied Button */
+.copy-btn {
+    background-color: #0f3460;
+    color: #69E799;
+    border: 1px solid #69E799;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #69E799;
+    color: #121212;
+}
+
+/* Responsive breakpoint */
 @media (max-width: 850px) {
     .site-container {
         grid-template-areas:
@@ -318,7 +448,6 @@ footer {
     }
 }
 
-/* Form Validation Error Styling */
 .error-msg {
     color: #e94560;
     font-size: 0.85rem;
@@ -326,7 +455,6 @@ footer {
     display: block;
 }
 
-/* Task 2: Accordion Styling */
 .accordion-item {
     border: 1px solid #0f3460;
     border-radius: 6px;
@@ -355,7 +483,7 @@ footer {
     border-top: 1px solid #0f3460;
 }
 
-/* Popup Modal Styling */
+/* Popup Modal */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -393,7 +521,6 @@ footer {
     color: #e94560;
 }
 
-/* Widget Buttons & Clock */
 .clock-widget {
     background-color: #16213e;
     border: 1px solid #0f3460;
@@ -427,8 +554,6 @@ footer {
     color: #121212;
 }
 
-/* Additions for Assignment 5 */
-
 /* Interactive Rating Stars */
 .rating-container {
     display: flex;
@@ -448,7 +573,6 @@ footer {
     transform: scale(1.2);
 }
 
-/* Sound Effect / Interactive Button Feedback Animation */
 .btn-animated {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -458,7 +582,7 @@ footer {
     box-shadow: 0 0 10px #69E799;
 }
 
-/* Dynamic Notification Alert */
+/* Toast Notifications */
 .notification-toast {
     position: fixed;
     bottom: 20px;
@@ -478,27 +602,4 @@ footer {
 .notification-toast.show {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Filter Buttons Styling */
-.filter-btn-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.filter-btn {
-    background-color: #16213e;
-    color: #ffffff;
-    border: 1px solid #0f3460;
-    padding: 6px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.filter-btn.active, .filter-btn:hover {
-    background-color: #69E799;
-    color: #121212;
 }

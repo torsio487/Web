@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deadlock Wiki - Characters</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 <body>
+
+    <div class="scroll-progress-bar"></div>
 
     <div class="site-container">
 
@@ -24,7 +27,6 @@
             </nav>
         </header>
 
-        <!-- Grid Sidebar -->
         <aside class="sidebar">
             <div class="clock-widget">
                 <small style="color: #888;">Current Time:</small>
@@ -36,27 +38,33 @@
                 <li><a href="#hatred-list">Top Hatred Heroes</a></li>
                 <li><a href="#attribute-matrix">Attribute Matrix</a></li>
             </ul>
+            <button id="theme-toggle-btn" class="btn-theme" style="margin-top: 15px;">Toggle Light/Dark Theme</button>
             <hr style="border-color: #0f3460; margin: 20px 0;">
             <h3>Quick Stats</h3>
-            <p style="font-size: 0.85rem;">Total Tracked Heroes: 4</p>
+            <!-- Task 5: Animated Number Counter -->
+            <p style="font-size: 0.85rem;">Total Tracked Heroes: <span class="counter" data-target="4">0</span></p>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <section class="card">
                 <h2 id="misfits">The main misfits of Deadlock</h2>
                 <p>Check out the current misfits of heroes.</p>
                 
-                <h3 id="hatred-list">Top Hatred Heroes (in our proffessional opinion)</h3>
-                <!-- OL list requirement -->
-                <ol>
+                <!-- Task 1 & 2: Real-time Live Search & Autocomplete Search Bar -->
+                <div class="search-container" style="margin-bottom: 20px; position: relative;">
+                    <label for="hero-search" style="font-size: 0.85rem; display: block; margin-bottom: 5px;">Search / Filter Most Hatred Heroes:</label>
+                    <input type="text" id="hero-search" placeholder="Type hero name (e.g. Wraith, Celeste)..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #0f3460; background: #16213e; color: #fff;">
+                    <div id="autocomplete-suggestions" class="autocomplete-dropdown"></div>
+                </div>
+
+                <h3 id="hatred-list">Top Hatred Heroes (in our professional opinion)</h3>
+                <ol class="searchable-list">
                     <li><strong>Wraith</strong> - Degenerate Gambler with one button kill ultimate</li>
                     <li><strong>Celeste</strong> - Obnoxious unkillable unicorn</li>
                     <li><strong>Infernus</strong> - Ixier with no skill gameplay</li>
-                    <li><strong>Mo & Krill</strong> - Pig and Monkey duo with one button full hp regeniration</li>
+                    <li><strong>Mo & Krill</strong> - Pig and Monkey duo with one button full hp regeneration</li>
                 </ol>
 
-                <!--Table requirement -->
                 <h3 id="attribute-matrix">Hero Attribute Matrix</h3>
                 <table id="hero-table">
                     <tr>
@@ -91,7 +99,7 @@
                     </tr>
                 </table>
 
-                <img src="https://preview.redd.it/not-a-meme-competitive-deadlock-tier-list-oct-5-2025-patch-v0-36izmeij67wf1.png?auto=webp&s=3bbcdc965bdb52c9e2b742f7cb1c949a6f69a53e" alt="Deadlock Current Meta" class="content-img">
+                <img src="https://preview.redd.it/not-a-meme-competitive-deadlock-tier-list-oct-5-2025-patch-v0-36izmeij67wf1.png?auto=webp&s=3bbcdc965bdb52c9e2b742f7cb1c949a6f69a53e" alt="Deadlock Current Meta" class="content-img" data-src="https://preview.redd.it/not-a-meme-competitive-deadlock-tier-list-oct-5-2025-patch-v0-36izmeij67wf1.png?auto=webp&s=3bbcdc965bdb52c9e2b742f7cb1c949a6f69a53e">
             </section>
         </main>
 
@@ -102,6 +110,5 @@
     </div>
 
 <script src="js/script.js"></script>
-
 </body>
 </html>
