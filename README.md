@@ -1,7 +1,7 @@
-# Deadlock Wiki - Advanced JavaScript & DOM Manipulation Project
+# Deadlock Wiki - jQuery & Interactive UX Features Project
 
 ## Project Overview
-This project is an interactive web application dedicated to Valve's hero-shooter game Deadlock. Developed as part of Assignment 5 for the Frontend Development course at Astana IT University, the project demonstrates advanced JavaScript principles, dynamic DOM manipulation, asynchronous event handling, synthesized audio effects, and modern CSS layout techniques.
+This project is an interactive web application dedicated to Valve's hero-shooter game Deadlock. Upgraded as part of Assignment 6 for the Frontend Development course at Astana IT University, the project introduces jQuery for DOM manipulation, real-time live search, interactive UX elements, multi-step form wizard, lazy loading, and enhanced asynchronous feedback mechanisms.
 
 ## Team Information
 * **Team Name:** Golden Goose Egg
@@ -11,44 +11,52 @@ This project is an interactive web application dedicated to Valve's hero-shooter
 
 ## Key Features Implemented
 
-### Part 1: Advanced JavaScript & DOM Manipulation
-1. **Dynamic Style & Theme Changes:**
-   * Live theme background switcher modifying CSS properties dynamically without breaking application layout.
-   * Day/Night contrast styling and element-level highlighting.
+### Task 0 & Setup
+* Integration of **jQuery 4.0.0 CDN** inside the HTML `<head>`.
+* Initialization of `$(document).ready()` inside `js/script.js` to ensure reliable DOM setup.
 
-2. **Interactive Rating System:**
-   * Star rating component created using `document.querySelectorAll`.
-   * Real-time dynamic updates of selected rating values and visual feedback on star hover/selection.
+### Part 1: jQuery Search & Filtering
+1. **Real-time Search & Live Filter (Task 1):**
+   * Instant keyword filtering on lists and elements using jQuery keyup events and `.filter()`.
+2. **Autocomplete Search Suggestions (Task 2):**
+   * Dynamic suggestions dropdown menu rendered beneath the search bar as users type.
+3. **Search Highlighting (Task 3):**
+   * Programmatic text highlighting that wraps search term matches in styled tags across page content.
 
-3. **Role-Based Content Filtering:**
-   * Interactive category filter buttons utilizing higher-order array methods (`filter`, `forEach`) and JavaScript objects.
-   * Logical execution flow controlled by `switch` statements to toggle gallery visibility according to selected hero roles (Duelist, Tank, Initiator, or All).
+### Part 2: UX Engagement Elements
+1. **Colorful Scroll Progress Bar (Task 4):**
+   * Top-positioned horizontal progress indicator tracking page scroll position.
+2. **Animated Number Counter (Task 5):**
+   * Smooth number counter animation for key stats (e.g., total hero counts).
+3. **Loading Spinner on Submit (Task 6):**
+   * Submit button state updates showing a loading spinner and disabled state during processing.
 
-4. **Event Handling & Keyboard Navigation:**
-   * Asynchronous event listeners integrated across all interactive components.
-   * Full keyboard navigation support allowing users to tab through menu links using the Left and Right Arrow keys (`ArrowLeft`, `ArrowRight`).
+### Part 3: Web Application Functionality
+1. **Toast Notification System (Task 7):**
+   * Temporary pop-up toast alerts providing immediate feedback for user actions.
+2. **Copy to Clipboard Button (Task 8):**
+   * Quick-copy snippet buttons updating text/icons upon successful copy.
+3. **Image Lazy Loading (Task 9):**
+   * Optimized media loading that loads images (`data-src`) only when scrolled into view.
 
-5. **Form Validation & Asynchronous Interactions:**
-   * Feedback form validation including email format verification, regex-based password strength requirements, and password confirmation matching.
-   * Dynamic error feedback messages rendered directly in the DOM without reloading the page.
-   * Instant form resetting logic using DOM node iteration.
-
-6. **Synthesized Audio Effects:**
-   * Sound feedback generated using the native browser Web Audio API (`AudioContext`).
-   * Custom audio cues played on button clicks, filter selections, and star rating interactions.
-
-7. **Modal Overlay & Dynamic Widgets:**
-   * Popup subscription modal triggered via event listeners with outside-click dismissal support.
-   * Real-time live digital clock updating every second using JavaScript `Date` objects and intervals.
+### Additional Custom Requirements
+1. **Dark/Light Theme Toggle:**
+   * Global toggle switch substituting basic background changes with dark and light themes.
+2. **Multi-Step Feedback Form:**
+   * A 3-stage step-by-step feedback wizard with Back/Next navigation and step indicators.
+3. **Timed Greeting Popup:**
+   * Automatic welcome subscription modal popping up after a brief time delay.
+4. **Specific Hero Ratings:**
+   * Individual hero rating widgets on the home page (`index.html`).
 
 ## Project Structure
-* `index.html` - Primary landing page containing the hero showcase, gallery, filter controls, accordion FAQ, and subscription modal.
-* `characters.html` - Detailed hero breakdown, tier rankings, and attribute tables.
-* `apollo.html` - Dedicated hero profile page for Apollo.
-* `paradox.html` - Dedicated hero profile page for Paradox.
-* `feedback.html` - Interactive user feedback submission form with real-time validation.
-* `css/style.css` - Centralized stylesheet incorporating CSS Grid, Flexbox, layout transitions, and element animations.
-* `js/script.js` - Main JavaScript file containing all interactive logic, DOM handlers, audio synthesis, and validation routines.
+* `index.html` - Main landing page featuring hero spotlights, specific hero ratings, timed welcome modal, and gallery.
+* `characters.html` - Roster overview with real-time live search and autocomplete filtering.
+* `apollo.html` - Dedicated page for Apollo featuring copy-to-clipboard lore snippets.
+* `paradox.html` - Dedicated page for Paradox with copy-to-clipboard features.
+* `feedback.html` - Multi-step feedback wizard form with step validation and animated submit state.
+* `css/style.css` - Stylesheet with CSS Grid/Flexbox, light/dark themes, scroll progress bar, and spinners.
+* `js/script.js` - Main JavaScript file powered by jQuery for DOM logic, search features, scroll tracking, and modals.
 
 ## Deployment
-The project is deployed via GitHub Pages / Netlify and can be accessed online at the deployed project URL specified in the project report.
+The project is deployed and accessible via the URL specified in the submission report.
