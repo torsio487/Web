@@ -1,6 +1,12 @@
 $(document).ready(function () {
     console.log("jQuery is ready!");
 
+    // Проверка и применение сохраненной темы при загрузке страницы
+    if (localStorage.getItem("deadlock_theme") === "light") {
+        $("body").addClass("light-theme");
+        $("#theme-toggle-btn").text("Toggle Dark Theme");
+    }
+
     // Sound Effects Helper (Web Audio API)
     function playSound(type = 'click') {
         try {
@@ -45,35 +51,44 @@ $(document).ready(function () {
         }, 3000);
     }
 
-    // Dark/Light Theme Toggle Button
+    // Dark/Light Theme Toggle Button (с сохранением в localStorage)
     $("#theme-toggle-btn").on("click", function () {
         playSound('click');
         $("body").toggleClass("light-theme");
         if ($("body").hasClass("light-theme")) {
             $(this).text("Toggle Dark Theme");
+            localStorage.setItem("deadlock_theme", "light");
             showNotification("Switched to Light Theme");
         } else {
             $(this).text("Toggle Light/Dark Theme");
+            localStorage.setItem("deadlock_theme", "dark");
             showNotification("Switched to Dark Theme");
         }
     });
 
-    // Timed Welcome Greeting Popup Modal
+    // Timed Welcome Greeting Popup Modal (Closed Forever via localStorage)
     const $popupModal = $("#popup-modal");
     if ($popupModal.length > 0) {
-        // Show after 3 seconds (3000ms)
-        setTimeout(() => {
+        if (!localStorage.getItem("deadlock_popup_closed")) {
+            setTimeout(() => {
+                $popupModal.css("display", "flex");
+            }, 3000);
+        }
+
+        // Subscribe to Wiki Button opens modal
+        $("#open-modal-btn").on("click", function () {
+            playSound('click');
             $popupModal.css("display", "flex");
-        }, 3000);
+        });
 
         $("#close-modal-btn, #popup-modal").on("click", function (e) {
             if (e.target === this || $(this).attr('id') === 'close-modal-btn') {
                 playSound('click');
                 $popupModal.css("display", "none");
+                localStorage.setItem("deadlock_popup_closed", "true");
             }
         });
 
-        // Prevent closing when clicking inside modal box
         $(".modal-content-custom").on("click", function (e) {
             e.stopPropagation();
         });
@@ -94,6 +109,7 @@ $(document).ready(function () {
                 $spinner.hide();
                 $btn.prop("disabled", false);
                 $popupModal.css("display", "none");
+                localStorage.setItem("deadlock_popup_closed", "true");
                 playSound('star');
                 showNotification("Successfully subscribed to Deadlock Wiki!");
             }, 1500);
@@ -124,8 +140,8 @@ $(document).ready(function () {
         });
     });
 
-    // Real-time Live Search & Autocomplete
-    const heroNames = ["Wraith", "Celeste", "Infernus", "Mo & Krill", "Apollo", "Paradox"];
+    // Real-time Live Search & Autocomplete (Filters both list and hero table)
+    const heroNames = ["Wraith", "Celeste", "Infernus", "Mo & Krill"];
     
     $("#hero-search").on("keyup", function () {
         const query = $(this).val().toLowerCase();
@@ -133,6 +149,11 @@ $(document).ready(function () {
         
         // Live Filter list items
         $(".searchable-list li").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(query) > -1);
+        });
+
+        // Live Filter table rows
+        $("#hero-table tr:not(:first-child)").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(query) > -1);
         });
 
@@ -153,38 +174,35 @@ $(document).ready(function () {
         }
     });
 
-    // Click on autocomplete suggestion
     $(document).on("click", ".autocomplete-item", function () {
         const val = $(this).text();
         $("#hero-search").val(val).trigger("keyup");
         $("#autocomplete-suggestions").hide();
     });
 
-    // Hide autocomplete on outside click
     $(document).on("click", function (e) {
         if (!$(e.target).closest(".search-container").length) {
             $("#autocomplete-suggestions").hide();
         }
     });
 
-    // Search Highlighting (Highlights searched text on page)
-    // Can be triggered programmatically or via search
-    function highlightKeyword(keyword) {
-        if (!keyword) return;
-        $(".main-content p, .main-content h3").each(function () {
-            let text = $(this).html();
-            // simple regex wrapper highlight
-            let regex = new RegExp(`(${keyword})`, 'gi');
-            // Avoid double wrapping
-            if (!text.includes("highlight-mark")) {
-                let newText = text.replace(regex, '<span class="highlight-mark" style="background:#ffc107; color:#121212; padding:0 3px;">$1</span>');
-                $(this).html(newText);
-            }
-        });
-    }
+    // Dynamic Hero Rating Selection & Rating
+    $("#select-hero-rating").on("change", function () {
+        const hero = $(this).val();
+        const $box = $("#dynamic-hero-rating-box");
+        if (hero) {
+            $box.attr("data-hero", hero);
+            $box.find(".rating-container").attr("data-target-hero", hero);
+            $("#dynamic-hero-title").text(`${hero} Rating`);
+            $box.find(".hero-rating-result").text("No rating yet");
+            $box.find(".star").removeClass("selected");
+            $box.show();
+        } else {
+            $box.hide();
+        }
+    });
 
-    // Rating Specific Heroes in Index
-    $(".hero-rating-box .star").on("click", function () {
+    $(document).on("click", "#dynamic-hero-rating-box .star, .hero-rating-box .star", function () {
         playSound('star');
         const $container = $(this).closest(".hero-rating-box");
         const heroName = $container.attr("data-hero");
@@ -202,7 +220,7 @@ $(document).ready(function () {
         showNotification(`Rated ${heroName} ${ratingVal} stars!`);
     });
 
-    // (from previous assignment): Accordion for FAQs
+    // Accordion for FAQs
     $(".accordion-header").on("click", function () {
         playSound('click');
         const $body = $(this).next(".accordion-body");
@@ -225,31 +243,43 @@ $(document).ready(function () {
 
         navigator.clipboard.writeText(textToCopy).then(() => {
             $btn.text("Copied!");
-            showNotification("Copied lore snippet to clipboard!");
+            showNotification("Copied to clipboard!");
             setTimeout(() => {
-                $btn.text("Copy Lore");
+                $btn.text($btn.hasClass("copy-btn") && $btn.text().includes("Email") ? "Copy Email" : "Copy Lore");
             }, 2000);
         }).catch(err => {
             console.error("Failed to copy", err);
         });
     });
 
-    // Image Lazy Loading
+    // Fixed Image Lazy Loading
     function checkLazyLoad() {
         $("img[data-src]").each(function () {
             const $img = $(this);
             const scrollTop = $(window).scrollTop();
             const winHeight = $(window).height();
-            const imgOffsetTop = $img.offset().top;
-
-            if (imgOffsetTop < scrollTop + winHeight + 200) {
-                $img.attr("src", $img.attr("data-src"));
-                $img.removeAttr("data-src");
+            if ($img.offset()) {
+                const imgOffsetTop = $img.offset().top;
+                if (imgOffsetTop < scrollTop + winHeight + 300) {
+                    if ($img.attr("src") !== $img.attr("data-src")) {
+                        $img.attr("src", $img.attr("data-src"));
+                    }
+                }
             }
         });
     }
+
+    $("img[data-src]").each(function () {
+        const $img = $(this);
+        if ($img.offset() && $img.offset().top > $(window).height()) {
+            if ($img.attr("src") === $img.attr("data-src")) {
+                $img.attr("src", "");
+            }
+        }
+    });
+
     $(window).on("scroll resize", checkLazyLoad);
-    checkLazyLoad(); // Initial check
+    checkLazyLoad();
 
     // Live Clock Widget
     function updateClock() {
@@ -266,7 +296,7 @@ $(document).ready(function () {
     updateClock();
     setInterval(updateClock, 1000);
 
-    // Multi-Step Feedback Form (3 Steps Wizard)
+    // Multi-Step Feedback Form (3 Steps Wizard) with Reset on all steps
     let currentStep = 1;
 
     function showStep(step) {
@@ -285,7 +315,6 @@ $(document).ready(function () {
         playSound('click');
         let isValid = true;
 
-        // Validate Step 1 before proceeding
         if (currentStep === 1) {
             const email = $("#email").val();
             const pass = $("#password").val();
@@ -330,17 +359,17 @@ $(document).ready(function () {
     });
 
     const $feedbackForm = $("#multistep-feedback-form");
-    const $resetFormBtn = $("#reset-form-btn");
-
-    if ($resetFormBtn.length > 0) {
-        $resetFormBtn.on("click", function () {
-            playSound('click');
+    
+    $(".reset-form-step-btn, #reset-form-btn").on("click", function () {
+        playSound('click');
+        if ($feedbackForm.length > 0) {
             $feedbackForm[0].reset();
-            currentStep = 1;
-            showStep(currentStep);
-            showNotification("Form reset successfully!");
-        });
-    }
+            $(".error-msg").text(""); 
+        }
+        currentStep = 1;
+        showStep(currentStep);
+        showNotification("Form reset successfully!");
+    });
 
     if ($feedbackForm.length > 0) {
         $feedbackForm.on("submit", function (e) {
@@ -351,7 +380,6 @@ $(document).ready(function () {
             const $btnText = $submitBtn.find(".btn-text");
             const $spinner = $submitBtn.find(".spinner");
 
-            // Loading spinner on submit
             $btnText.hide();
             $spinner.show();
             $submitBtn.prop("disabled", true);

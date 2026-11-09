@@ -603,3 +603,33 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+body.light-theme #hero-table {
+    background-color: #ffffff;
+}
+body.light-theme #hero-table th {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+body.light-theme #hero-table td, 
+body.light-theme #hero-table th {
+    border-color: #dcdcdc;
+    color: #222222;
+}
+
+body.light-theme h1, 
+body.light-theme h2, 
+body.light-theme h3,
+body.light-theme .header-logo span,
+body.light-theme .nav-menu a:hover,
+body.light-theme .sidebar a,
+body.light-theme .flex-card h4,
+body.light-theme .gallery-caption,
+body.light-theme .accordion-header,
+body.light-theme #live-clock {
+    color: #2e7d32 !important;
+}
+
+body.light-theme .scroll-progress-bar {
+    background: linear-gradient(90deg, #2e7d32, #ff9f1c);
+}

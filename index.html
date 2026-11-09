@@ -101,33 +101,30 @@
 
             <!-- Rating Specific Heroes in Index -->
             <section id="hero-ratings" class="card">
-                <h2>Rate Specific Featured Heroes</h2>
-                <p>Give your community rating to individual heroes:</p>
-                
-                <div class="hero-rating-box" data-hero="Apollo">
-                    <h4>Apollo Rating</h4>
-                    <div class="rating-container" data-target-hero="Apollo">
-                        <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <p class="hero-rating-result" style="font-size: 0.85rem; color: #69E799;">No rating yet</p>
+                <h2>Rate Specific Heroes</h2>
+                <p>Select a hero from the list to give your community rating:</p>
+    
+                <div class="form-group" style="margin-bottom: 15px;">
+                <label for="select-hero-rating" style="font-size: 0.85rem; display: block; margin-bottom: 5px;">Select Hero to Rate:</label>
+                <select id="select-hero-rating" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #0f3460; background: #16213e; color: #fff;">
+                <option value="">-- Choose a hero --</option>
+                <option value="Apollo">Apollo</option>
+                <option value="Paradox">Paradox</option>
+                <option value="Wraith">Wraith</option>
+                <option value="Celeste">Celeste</option>
+                <option value="Infernus">Infernus</option>
+                <option value="Mo & Krill">Mo & Krill</option>
+                </select>
                 </div>
 
-                <div class="hero-rating-box" data-hero="Paradox" style="margin-top: 15px;">
-                    <h4>Paradox Rating</h4>
-                    <div class="rating-container" data-target-hero="Paradox">
-                        <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <p class="hero-rating-result" style="font-size: 0.85rem; color: #69E799;">No rating yet</p>
-                </div>
-
-                <div class="hero-rating-box" data-hero="Wraith" style="margin-top: 15px;">
-                    <h4>Wraith Rating</h4>
-                    <div class="rating-container" data-target-hero="Wraith">
-                        <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
-                    </div>
-                    <p class="hero-rating-result" style="font-size: 0.85rem; color: #69E799;">No rating yet</p>
-                </div>
-            </section>
+    <div id="dynamic-hero-rating-box" class="hero-rating-box" style="display: none; margin-top: 15px;" data-hero="">
+        <h4 id="dynamic-hero-title">Rating</h4>
+        <div class="rating-container" data-target-hero="">
+            <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
+        </div>
+        <p class="hero-rating-result" style="font-size: 0.85rem; color: #69E799;">No rating yet</p>
+    </div>
+</section>
 
             <!-- FAQ Accordion -->
             <section id="faq-section" class="card">
@@ -172,18 +169,23 @@
                 </div>
             </section>
 
-            <section id="about-us" class="card">
-                <h2>About Us</h2>
-                <p>Welcome to our Deadlock Wiki project</p>
-                <div class="bio-block">
-                    <h3>Alizan Talov</h3>
-                    <p><strong>Role:</strong> Developer #1</p>
-                </div>
-                <div class="bio-block">
-                    <h3>Ruslan Suleimen</h3>
-                    <p><strong>Role:</strong> Developer #2</p>
-                </div>
-            </section>
+<section id="about-us" class="card">
+    <h2>About Us</h2>
+    <p>Welcome to our Deadlock Wiki project</p>
+    <div class="bio-block">
+        <h3>Alizan Talov</h3>
+        <p><strong>Role:</strong> Developer #1</p>
+    </div>
+    <div class="bio-block">
+        <h3>Ruslan Suleimen</h3>
+        <p><strong>Role:</strong> Developer #2</p>
+    </div>
+    <div class="bio-block">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> GoldenGooseEgg@gmail.com</p>
+        <button class="copy-btn" data-clipboard-text="GoldenGooseEgg@gmail.com">Copy Email</button>
+    </div>
+</section>
 
         </main>
 

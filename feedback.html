@@ -60,51 +60,55 @@
                     </div>
 
                     <!-- STEP 1 -->
-                    <div class="form-step active" data-step="1">
-                        <h3>Step 1: Credentials & Identity</h3>
-                        <div class="form-group">
-                            <label for="nickname">Your Nickname:</label>
-                            <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
-                        </div>
+<div class="form-step active" data-step="1">
+    <h3>Step 1: Credentials & Identity</h3>
+    <div class="form-group">
+        <label for="nickname">Your Nickname:</label>
+        <input type="text" id="nickname" name="nickname" placeholder="Enter your nickname" required>
+    </div>
 
-                        <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                            <span id="email-error" class="error-msg"></span>
-                        </div>
+    <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <span id="email-error" class="error-msg"></span>
+    </div>
 
-                        <div class="form-group">
-                            <label for="password">Account Password (min 8 chars):</label>
-                            <input type="password" id="password" name="password" placeholder="Enter password" required>
-                            <span id="pass-error" class="error-msg"></span>
-                        </div>
+    <div class="form-group">
+        <label for="password">Account Password (min 8 chars):</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <span id="pass-error" class="error-msg"></span>
+    </div>
 
-                        <div class="form-group">
-                            <label for="confirm-password">Confirm Password:</label>
-                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" required>
-                            <span id="confirm-pass-error" class="error-msg"></span>
-                        </div>
+    <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" required>
+        <span id="confirm-pass-error" class="error-msg"></span>
+    </div>
 
-                        <button type="button" class="submit-btn btn-next" style="margin-top: 10px;">Next Step &rarr;</button>
-                    </div>
+    <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+        <button type="button" class="submit-btn btn-next">Next Step &rarr;</button>
+        <button type="button" class="submit-btn reset-form-step-btn" style="background-color: #e94560;">Reset Form</button>
+    </div>
+</div>
 
-                    <!-- STEP 2 -->
-                    <div class="form-step" data-step="2">
-                        <h3>Step 2: Feedback Classification</h3>
-                        <div class="form-group">
-                            <label for="category">Feedback Category:</label>
-                            <select id="category" name="category">
-                                <option value="content">Content Suggestion / Lore</option>
-                                <option value="bug">Bug Report / Display Issue</option>
-                                <option value="hero-guide">Hero Guide Submission</option>
-                                <option value="other">General Feedback</option>
-                            </select>
-                        </div>
-                        <div style="display: flex; gap: 10px; margin-top: 15px;">
-                            <button type="button" class="submit-btn btn-prev" style="background-color: #444;">&larr; Back</button>
-                            <button type="button" class="submit-btn btn-next">Next Step &rarr;</button>
-                        </div>
-                    </div>
+<!-- STEP 2 -->
+<div class="form-step" data-step="2">
+    <h3>Step 2: Feedback Classification</h3>
+    <div class="form-group">
+        <label for="category">Feedback Category:</label>
+        <select id="category" name="category">
+            <option value="content">Content Suggestion / Lore</option>
+            <option value="bug">Bug Report / Display Issue</option>
+            <option value="hero-guide">Hero Guide Submission</option>
+            <option value="other">General Feedback</option>
+        </select>
+    </div>
+    <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+        <button type="button" class="submit-btn btn-prev" style="background-color: #444;">&larr; Back</button>
+        <button type="button" class="submit-btn btn-next">Next Step &rarr;</button>
+        <button type="button" class="submit-btn reset-form-step-btn" style="background-color: #e94560;">Reset Form</button>
+    </div>
+</div>
 
                     <!-- STEP 3 -->
                     <div class="form-step" data-step="3">
@@ -128,20 +132,26 @@
                 </form>
             </section>
 
-            <section id="about-us-section" class="card">
-                <h2>About Us</h2>
-                <p>Welcome to our Deadlock Wiki project</p>
+<section id="about-us-section" class="card">
+    <h2>About Us</h2>
+    <p>Welcome to our Deadlock Wiki project</p>
 
-                <div class="bio-block">
-                    <h3>Alizan Talov</h3>
-                    <p><strong>Role:</strong> Developer #1</p>
-                </div>
+    <div class="bio-block">
+        <h3>Alizan Talov</h3>
+        <p><strong>Role:</strong> Developer #1</p>
+    </div>
 
-                <div class="bio-block">
-                    <h3>Ruslan Suleimen</h3>
-                    <p><strong>Role:</strong> Developer #2</p>
-                </div>
-            </section>
+    <div class="bio-block">
+        <h3>Ruslan Suleimen</h3>
+        <p><strong>Role:</strong> Developer #2</p>
+    </div>
+
+    <div class="bio-block">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> GoldenGooseEgg@gmail.com</p>
+        <button class="copy-btn" data-clipboard-text="GoldenGooseEgg@gmail.com">Copy Email</button>
+    </div>
+</section>
         </main>
 
         <footer>
