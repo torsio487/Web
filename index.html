@@ -21,12 +21,13 @@
                 <span>Deadlock Wiki</span>
             </div>
             <nav class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="characters.html">Characters</a>
-                <a href="apollo.html">Apollo</a>
-                <a href="paradox.html">Paradox</a>
-                <a href="feedback.html">Feedback</a>
-            </nav>
+    <a href="index.html">Home</a>
+    <a href="characters.html">Characters</a>
+    <a href="apollo.html">Apollo</a>
+    <a href="paradox.html">Paradox</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="profile.html">Profile</a>
+</nav>
         </header>
 
         <aside class="sidebar">
@@ -168,6 +169,17 @@
                     <div class="gallery-item" data-role="tank"><img src="pictures/Mo_%26_Krill_card.png" alt="Mo & Krill" data-src="pictures/Mo_%26_Krill_card.png"><div class="gallery-caption">Mo & Krill - Tank</div></div>
                 </div>
             </section>
+
+<section id="api-feed-section" class="card">
+    <h2>Live Community & Dev Updates (API)</h2>
+    <p>Latest updates retrieved live from external developer feed:</p>
+    <div id="api-loading" style="text-align: center; padding: 20px;">
+        <span class="spinner" style="width: 32px; height: 32px; border-width: 4px;"></span>
+        <p style="margin-top: 10px;">Loading live updates...</p>
+    </div>
+    <div id="api-error" style="display: none; color: #e94560; padding: 10px; background: #16213e; border-radius: 4px; border: 1px solid #e94560;"></div>
+    <div id="api-content" style="display: none; display: flex; flex-direction: column; gap: 15px;"></div>
+</section>
 
 <section id="about-us" class="card">
     <h2>About Us</h2>

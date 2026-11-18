@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadlock Wiki - User Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+</head>
+<body>
+
+    <div class="scroll-progress-bar"></div>
+
+    <div class="site-container">
+
+        <header id="main-header">
+            <div class="header-logo">
+                <img src="pictures/Mina_card.png" alt="Deadlock Logo">
+                <span>Deadlock Wiki</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="characters.html">Characters</a>
+                <a href="apollo.html">Apollo</a>
+                <a href="paradox.html">Paradox</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <div class="clock-widget">
+                <small style="color: #888;">Current Time:</small>
+                <div id="live-clock">Loading time...</div>
+            </div>
+            <h3>Account Navigation</h3>
+            <ul>
+                <li><a href="#profile-section">My Profile</a></li>
+                <li><a href="#" id="logout-btn">Log Out</a></li>
+            </ul>
+            <button id="theme-toggle-btn" class="btn-theme" style="margin-top: 15px;">Toggle Light/Dark Theme</button>
+        </aside>
+
+        <main class="main-content">
+            <section id="profile-section" class="card">
+                <h2>User Profile & Authentication</h2>
+                <div id="profile-logged-out" style="display: none;">
+                    <p>You are not currently logged in. Please sign up or log in below:</p>
+                    
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                        <div style="flex: 1; min-width: 280px; background: #16213e; padding: 20px; border-radius: 8px; border: 1px solid #0f3460;">
+                            <h3>Sign Up</h3>
+                            <form id="signup-form" novalidate>
+                                <div class="form-group">
+                                    <label>Name:</label>
+                                    <input type="text" id="signup-name" required placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="email" id="signup-email" required placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password:</label>
+                                    <input type="password" id="signup-password" required placeholder="Enter password">
+                                    <span id="signup-error" class="error-msg"></span>
+                                </div>
+                                <button type="submit" class="submit-btn">Sign Up</button>
+                            </form>
+                        </div>
+
+                        <div style="flex: 1; min-width: 280px; background: #16213e; padding: 20px; border-radius: 8px; border: 1px solid #0f3460;">
+                            <h3>Log In</h3>
+                            <form id="login-form" novalidate>
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="email" id="login-email" required placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password:</label>
+                                    <input type="password" id="login-password" required placeholder="Enter password">
+                                    <span id="login-error" class="error-msg"></span>
+                                </div>
+                                <button type="submit" class="submit-btn">Log In</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="profile-logged-in" style="display: none;">
+                    <h3>Welcome back, <span id="user-display-name" style="color: #69E799;"></span>!</h3>
+                    <p>Here are your account details stored locally:</p>
+                    <ul style="list-style: none; padding: 0; background: #16213e; padding: 15px; border-radius: 6px; border: 1px solid #0f3460;">
+                        <li><strong>Name:</strong> <span id="profile-name"></span></li>
+                        <li><strong>Email:</strong> <span id="profile-email"></span></li>
+                        <li><strong>Account Created:</strong> <span id="profile-date"></span></li>
+                    </ul>
+                    <button id="profile-logout-btn" class="submit-btn" style="background-color: #e94560; margin-top: 15px;">Log Out</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Created by Golden Goose Egg Team: Alizan Talov & Ruslan Suleimen</p>
+        </footer>
+
+    </div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
