@@ -6,8 +6,8 @@ This project is an interactive, multi-page responsive web application dedicated 
 ## Team Information
 * **Team Name:** Golden Goose Egg[cite: 10]
 * **Team Members:**
-  * Alizan Talov (Developer #1)[cite: 4]
-  * Ruslan Suleimen (Developer #2)[cite: 4]
+  * Alizan Talov 
+  * Ruslan Suleimen 
   * **Contact Email:** GoldenGooseEgg@gmail.com[cite: 4]
 
 ## Key Features & Final Additions
