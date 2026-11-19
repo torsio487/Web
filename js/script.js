@@ -296,6 +296,106 @@ $(document).ready(function () {
     updateClock();
     setInterval(updateClock, 1000);
 
+    // Authentication Simulation & User Profile (localStorage)
+    if ($("#profile-section").length > 0) {
+        function renderProfileState() {
+            const currentUserEmail = localStorage.getItem("deadlock_current_user");
+            if (currentUserEmail) {
+                const rawUser = localStorage.getItem("deadlock_user_" + currentUserEmail);
+                if (rawUser) {
+                    const userData = JSON.parse(rawUser);
+                    $("#profile-logged-out").hide();
+                    $("#profile-logged-in").show();
+                    $("#user-display-name").text(userData.name);
+                    $("#profile-name").text(userData.name);
+                    $("#profile-email").text(userData.email);
+                    $("#profile-date").text(userData.date || "N/A");
+                    return;
+                }
+            }
+            $("#profile-logged-in").hide();
+            $("#profile-logged-out").show();
+        }
+
+        renderProfileState();
+
+        $("#signup-form").on("submit", function (e) {
+            e.preventDefault();
+            playSound('click');
+            const name = $("#signup-name").val().trim();
+            const email = $("#signup-email").val().trim();
+            const password = $("#signup-password").val();
+
+            if (!name || !email || !password) {
+                $("#signup-error").text("Please fill in all fields.");
+                return;
+            }
+
+            const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!emailRegex.test(email)) {
+                $("#signup-error").text("Please enter a valid email address.");
+                return;
+            }
+
+            if (password.length < 6) {
+                $("#signup-error").text("Password must be at least 6 characters long.");
+                return;
+            }
+
+            $("#signup-error").text("");
+            const userData = {
+                name: name,
+                email: email,
+                password: password,
+                date: new Date().toLocaleDateString("en-US")
+            };
+
+            localStorage.setItem("deadlock_user_" + email, JSON.stringify(userData));
+            localStorage.setItem("deadlock_current_user", email);
+            playSound('star');
+            showNotification("Account created! Welcome, " + name);
+            renderProfileState();
+        });
+
+        $("#login-form").on("submit", function (e) {
+            e.preventDefault();
+            playSound('click');
+            const email = $("#login-email").val().trim();
+            const password = $("#login-password").val();
+
+            if (!email || !password) {
+                $("#login-error").text("Please enter both email and password.");
+                return;
+            }
+
+            const storedUser = localStorage.getItem("deadlock_user_" + email);
+            if (!storedUser) {
+                $("#login-error").text("No account found with this email. Please sign up first.");
+                return;
+            }
+
+            const userData = JSON.parse(storedUser);
+            if (userData.password !== password) {
+                $("#login-error").text("Incorrect password.");
+                return;
+            }
+
+            $("#login-error").text("");
+            localStorage.setItem("deadlock_current_user", email);
+            playSound('star');
+            showNotification("Logged in as " + userData.name);
+            renderProfileState();
+        });
+
+        $("#profile-logout-btn, #logout-btn").on("click", function (e) {
+            e.preventDefault();
+            playSound('click');
+            localStorage.removeItem("deadlock_current_user");
+            showNotification("You have been logged out.");
+            renderProfileState();
+        });
+    }
+
     // Multi-Step Feedback Form (3 Steps Wizard) with Reset on all steps
     let currentStep = 1;
 
